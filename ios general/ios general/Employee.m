@@ -8,16 +8,15 @@
 @end
 
 @implementation Employee : NSObject
-- (instancetype)initWithFirstName: (NSString *) name
-                         lastName: (NSString *) lastname
-                           salary: (int) salary
+- (instancetype)initWithFirstName:(NSString *)name lastName:(NSString *)lastname salary:(int)salary
 {
     self = [super init];
-    if (self) {
-    self.firstName = name;
-    self.lastName = lastname;
-    self.salary   = salary;
-    self.fullName = [NSString stringWithFormat: @"%@ %@", name, lastname];
+    if (self)
+    {
+        self.firstName = name;
+        self.lastName = lastname;
+        self.salary = salary;
+        self.fullName = [NSString stringWithFormat: @"%@ %@", name, lastname];
     }
     NSLog(@"New Employee: %@, %d",self.fullName, salary);
     return self;

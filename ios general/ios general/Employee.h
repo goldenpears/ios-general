@@ -2,10 +2,9 @@
 
 @interface Employee : NSObject
 
-@property(nonatomic,assign) int salary;
-@property(nonatomic,assign) NSString *fullName;
+@property (nonatomic, assign) int salary;
+@property (nonatomic, strong) NSString *fullName; // readonly
 
-- (instancetype)initWithFirstName: (NSString *) name
-                         lastName: (NSString *) lastname
-                           salary: (int) salary;
+- (instancetype)initWithFirstName:(NSString *)name lastName:(NSString *)lastname salary:(int)salary;
+
 @end
