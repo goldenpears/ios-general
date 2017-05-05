@@ -8,8 +8,8 @@
 - (instancetype)initWithName:(NSString *)name;
 - (void)addEmployeeWithName:(NSString *)employeeName;
 - (void)addEmployee:(Employee *)employee;
-- (int)calculateAverageSalary:(NSArray<Employee *> *)employees;
-- (Employee *)employeeWithLowestSalary:(NSArray<Employee *> *)employees;
+- (int)calculateAverageSalary;
+- (Employee *)employeeWithLowestSalary;
 - (NSArray<Employee *> *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 //- (void)removeEmployee:(Employee *)employee;
 

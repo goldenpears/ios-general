@@ -67,7 +67,7 @@
 }
 
 
-- (int)calculateAverageSalary:(NSArray<Employee *> *)employees
+- (int)calculateAverageSalary
 {
     int salary = 0;
     for (Employee *e in self.employees)
@@ -80,7 +80,7 @@
 }
 
 
-- (Employee *)employeeWithLowestSalary:(NSArray<Employee *> *)employees
+- (Employee *)employeeWithLowestSalary
 {
     Employee *employee = [[Employee alloc] init];
     float max = MAXFLOAT;

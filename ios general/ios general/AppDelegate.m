@@ -25,8 +25,6 @@
     
     Organization *org = [[Organization alloc] initWithName:@"NextStep"];
     
-    NSArray<Employee *> *employeesArray = [[NSArray alloc]init];
-    
     [org addEmployeeWithName:@"Someone Anyone"];
     [org addEmployeeWithName:@"NameWith Space"];
     [org addEmployeeWithName:@"NameWith1 Two Spaces"];
@@ -34,8 +32,8 @@
     
     [org addEmployee:employee];
     [org addEmployee:[[Employee alloc]initWithFirstName:@"Beda" lastName:@"Marfa" salary:400]];
-    [org calculateAverageSalary:employeesArray];
-    [org employeeWithLowestSalary:employeesArray];
+    [org calculateAverageSalary];
+    [org employeeWithLowestSalary];
     [org employeesWithSalary:100 tolerance:50];
     
     //    [org removeEmployee:employee];
