@@ -114,11 +114,11 @@
 
 - (void)removeEmployee:(Employee *)employee
 {
-    NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.employees];
-    if ([newArray containsObject:employee])
+    if ([self.employees containsObject:employee])
     {
-        [newArray removeObject:employee];
-        self.employees = [newArray copy];
+        NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:self.employees];
+        [mutableArray removeObject:employee];
+        self.employees = [mutableArray copy];
         NSLog(@"Employee: '%@' was removed. New list of all Employees: %@", employee.fullName, self.employees);
     }
     else
