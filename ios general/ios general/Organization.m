@@ -49,14 +49,12 @@
 {
     if (self.employees)
     {
-        Employee *newEmployee = employee;
-        self.employees = [self.employees arrayByAddingObject:newEmployee];
+        self.employees = [self.employees arrayByAddingObject:employee];
     }
     else
     {
         self.employees = @[];
-        Employee *newEmployee = employee;
-        self.employees = [self.employees arrayByAddingObject:newEmployee];
+        self.employees = [self.employees arrayByAddingObject:employee];
     }
     NSLog(@"Add new Employee via 'addEmployee' method: %@", employee);
     NSLog(@"All Employees in %@: %@", self.name, self.employees);
@@ -65,14 +63,15 @@
 
 - (int)calculateAverageSalary
 {
-    int salary = 0;
+    NSNumber *salary = [self.employees valueForKeyPath:@"@avg.salary"];;
+    int result = [salary intValue];
+    
     for (Employee *e in self.employees)
     {
-        NSLog(@"Employee: %@; Salary: %d", e.fullName, e.salary);
-        salary += e.salary;
+        NSLog(@"Employee: %@; Salary: %d", e, e.salary);
     }
-    NSLog(@"Average salary is: %d", salary);
-    return salary;
+    NSLog(@"Average salary is: %d", result);
+    return result;
 }
 
 
@@ -119,7 +118,7 @@
 //    {
 //        [newArray removeObject: employee];
 //        self.employees = [newArray copy];
-//        NSLog(@"Emloyee: %@ was removed; New list of all Employees: %@", employee, self.employees);
+//        NSLog(@"Emloyee: %@ was removed; New list of all Employees: %@", employee.fullName, self.employees);
 //    } else
 //    {
 //        NSLog(@"There is no: %@", employee.fullName);
