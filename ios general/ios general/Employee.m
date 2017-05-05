@@ -24,7 +24,7 @@
 - (NSString *)fullName
 {
     NSString *fullName = [[NSString alloc] init];
-    fullName = [NSString stringWithFormat: @"FULL NAME: %@ %@", self.firstName, self.lastName];
+    fullName = [NSString stringWithFormat: @"%@ %@", self.firstName, self.lastName];
     return fullName;
 }
 

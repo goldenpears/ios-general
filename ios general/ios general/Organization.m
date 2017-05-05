@@ -32,20 +32,14 @@
     if (whiteSpaceRange.location != NSNotFound) {
         NSArray * employeeNameArray = [employeeName componentsSeparatedByString:@" "];
         NSLog(@"New name values are : %@", employeeNameArray);
-        Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
         
-        if (self.employees){
-            [self addEmployee:newEmployee];
-            self.employees = [self.employees arrayByAddingObject:newEmployee];
-        } else {
-            self.employees = @[];
-            [self addEmployee:newEmployee];
-            self.employees = [self.employees arrayByAddingObject:newEmployee];
-        }
+        Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
+        [self addEmployee:newEmployee];
+
     } else {
         // if name without space, put last name as 'Undefined'
         Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeName lastName:@"Undefined" salary:randomSalary];
-        self.employees = [self.employees arrayByAddingObject:newEmployee];
+        [self addEmployee:newEmployee];
     }
     NSLog(@"All Employees in %@: %@",self.name , self.employees);
 }
