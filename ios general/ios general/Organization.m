@@ -112,19 +112,19 @@
     return self.name;
 }
 
-//- (void)removeEmployee:(Employee *)employee
-//{
-//    NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.employees];
-//    if ([newArray containsObject:employee])
-//    {
-//        [newArray removeObject:employee];
-//        self.employees = [newArray copy];
-//        NSLog(@"Emloyee: %@ was removed; New list of all Employees: %@", employee.fullName, self.employees);
-//    }
-//    else
-//    {
-//        NSLog(@"There is no: %@", employee.fullName);
-//    }
-//}
+- (void)removeEmployee:(Employee *)employee
+{
+    NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.employees];
+    if ([newArray containsObject:employee])
+    {
+        [newArray removeObject:employee];
+        self.employees = [newArray copy];
+        NSLog(@"Employee: '%@' was removed. New list of all Employees: %@", employee.fullName, self.employees);
+    }
+    else
+    {
+        NSLog(@"There is no employee with name: %@ works for '%@' organization", employee.fullName, self.name);
+    }
+}
 
 @end
