@@ -32,12 +32,14 @@
     if (whiteSpaceRange.location != NSNotFound) {
         NSArray * employeeNameArray = [employeeName componentsSeparatedByString:@" "];
         NSLog(@"New name values are : %@", employeeNameArray);
+        Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
+        
         if (self.employees){
-            Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
+            [self addEmployee:newEmployee];
             self.employees = [self.employees arrayByAddingObject:newEmployee];
         } else {
             self.employees = @[];
-            Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
+            [self addEmployee:newEmployee];
             self.employees = [self.employees arrayByAddingObject:newEmployee];
         }
     } else {

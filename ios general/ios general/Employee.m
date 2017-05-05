@@ -24,13 +24,13 @@
 - (NSString *)fullName
 {
     NSString *fullName = [[NSString alloc] init];
-    fullName = [NSString stringWithFormat: @"%@ %@", self.firstName, self.lastName];
+    fullName = [NSString stringWithFormat: @"FULL NAME: %@ %@", self.firstName, self.lastName];
     return fullName;
 }
 
 - (NSString *)description
 {
-    return self.firstName;
+    return self.fullName;
 }
 
 @end
