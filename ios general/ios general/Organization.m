@@ -72,7 +72,7 @@
     int salary = 0;
     for (Employee *e in self.employees)
     {
-        NSLog(@"Employee: %@; Salary: %d", e, e.salary);
+        NSLog(@"Employee: %@; Salary: %d", e.fullName, e.salary);
         salary += e.salary;
     }
     NSLog(@"Average salary is: %d", salary);
@@ -92,7 +92,7 @@
             employee = e;
         }
     }
-    NSLog(@"Employee with the lowest salary: %@, %d", employee, employee.salary);
+    NSLog(@"Employee with the lowest salary: %@, %d", employee.fullName, employee.salary);
     return employee;
 }
 

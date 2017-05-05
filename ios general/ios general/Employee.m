@@ -16,13 +16,19 @@
         self.firstName = name;
         self.lastName = lastname;
         self.salary = salary;
-        self.fullName = [NSString stringWithFormat: @"%@ %@", name, lastname];
     }
     NSLog(@"New Employee: %@, %d",self.fullName, salary);
     return self;
 }
 
-- (NSString *) description
+- (NSString *)fullName
+{
+    NSString *fullName = [[NSString alloc] init];
+    fullName = [NSString stringWithFormat: @"%@ %@", self.firstName, self.lastName];
+    return fullName;
+}
+
+- (NSString *)description
 {
     return self.firstName;
 }
