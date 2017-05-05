@@ -36,8 +36,8 @@
     [org employeeWithLowestSalary];
     [org employeesWithSalary:100 tolerance:50];
     
-    //    [org removeEmployee:employee];
-    //    [org removeEmployee:[[Employee alloc]initWithFirstName: @"No" lastName: @"One" salary: 0]];
+    [org removeEmployee:employee2];
+    [org removeEmployee:[[Employee alloc] initWithFirstName:@"SomeoneWho" lastName:@"DoesntExist" salary:0]];
     
     return YES;
 }
