@@ -15,7 +15,7 @@
     self = [super init];
     if (self)
     {
-    self.name = name;
+        self.name = name;
     }
     NSLog(@"New Organization: %@", name);
     return self;
@@ -31,17 +31,18 @@
     NSRange whiteSpaceRange = [employeeName rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]];
     if (whiteSpaceRange.location != NSNotFound) {
         NSArray * employeeNameArray = [employeeName componentsSeparatedByString:@" "];
-        NSLog(@"New name values are : %@", employeeNameArray);
+//        NSLog(@"New name values are : %@", employeeNameArray);
         
         Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
         [self addEmployee:newEmployee];
-
-    } else {
+    }
+    else
+    {
         // if name without space, put last name as 'Undefined'
         Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeName lastName:@"Undefined" salary:randomSalary];
         [self addEmployee:newEmployee];
     }
-    NSLog(@"All Employees in %@: %@",self.name , self.employees);
+//    NSLog(@"All Employees in %@: %@",self.name , self.employees);
 }
 
 
@@ -56,7 +57,7 @@
         self.employees = @[];
         self.employees = [self.employees arrayByAddingObject:employee];
     }
-    NSLog(@"Add new Employee via 'addEmployee' method: %@", employee);
+//    NSLog(@"Add new Employee via 'addEmployee' method: %@", employee);
     NSLog(@"All Employees in %@: %@", self.name, self.employees);
 }
 
@@ -114,12 +115,13 @@
 //- (void)removeEmployee:(Employee *)employee
 //{
 //    NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.employees];
-//    if ([newArray containsObject: employee])
+//    if ([newArray containsObject:employee])
 //    {
-//        [newArray removeObject: employee];
+//        [newArray removeObject:employee];
 //        self.employees = [newArray copy];
 //        NSLog(@"Emloyee: %@ was removed; New list of all Employees: %@", employee.fullName, self.employees);
-//    } else
+//    }
+//    else
 //    {
 //        NSLog(@"There is no: %@", employee.fullName);
 //    }
