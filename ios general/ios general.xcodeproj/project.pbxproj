@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9335CD811EC08C0000DC2108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9335CD7F1EC08C0000DC2108 /* Main.storyboard */; };
 		935C62E71EBB4C7800EA6A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62E61EBB4C7800EA6A8A /* main.m */; };
 		935C62EA1EBB4C7800EA6A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62E91EBB4C7800EA6A8A /* AppDelegate.m */; };
 		935C62ED1EBB4C7800EA6A8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62EC1EBB4C7800EA6A8A /* ViewController.m */; };
-		935C62F01EBB4C7800EA6A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935C62EE1EBB4C7800EA6A8A /* Main.storyboard */; };
 		935C62F21EBB4C7800EA6A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935C62F11EBB4C7800EA6A8A /* Assets.xcassets */; };
 		935C62F51EBB4C7800EA6A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935C62F31EBB4C7800EA6A8A /* LaunchScreen.storyboard */; };
 		935C63001EBB4C7800EA6A8A /* ios_generalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62FF1EBB4C7800EA6A8A /* ios_generalTests.m */; };
@@ -37,13 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9335CD801EC08C0000DC2108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		935C62E21EBB4C7800EA6A8A /* ios general.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios general.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935C62E61EBB4C7800EA6A8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		935C62E81EBB4C7800EA6A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		935C62E91EBB4C7800EA6A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		935C62EB1EBB4C7800EA6A8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		935C62EC1EBB4C7800EA6A8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		935C62EF1EBB4C7800EA6A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		935C62F11EBB4C7800EA6A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		935C62F41EBB4C7800EA6A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		935C62F61EBB4C7800EA6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,11 +115,11 @@
 				935C62E91EBB4C7800EA6A8A /* AppDelegate.m */,
 				935C62EB1EBB4C7800EA6A8A /* ViewController.h */,
 				935C62EC1EBB4C7800EA6A8A /* ViewController.m */,
-				935C62EE1EBB4C7800EA6A8A /* Main.storyboard */,
 				935C62F11EBB4C7800EA6A8A /* Assets.xcassets */,
 				935C62F31EBB4C7800EA6A8A /* LaunchScreen.storyboard */,
 				935C62F61EBB4C7800EA6A8A /* Info.plist */,
 				935C62E51EBB4C7800EA6A8A /* Supporting Files */,
+				9335CD7F1EC08C0000DC2108 /* Main.storyboard */,
 			);
 			path = "ios general";
 			sourceTree = "<group>";
@@ -256,9 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9335CD811EC08C0000DC2108 /* Main.storyboard in Resources */,
 				935C62F51EBB4C7800EA6A8A /* LaunchScreen.storyboard in Resources */,
 				935C62F21EBB4C7800EA6A8A /* Assets.xcassets in Resources */,
-				935C62F01EBB4C7800EA6A8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,10 +323,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		935C62EE1EBB4C7800EA6A8A /* Main.storyboard */ = {
+		9335CD7F1EC08C0000DC2108 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				935C62EF1EBB4C7800EA6A8A /* Base */,
+				9335CD801EC08C0000DC2108 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -521,6 +521,7 @@
 				935C63111EBB4C7900EA6A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		935C63121EBB4C7900EA6A8A /* Build configuration list for PBXNativeTarget "ios generalTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +530,7 @@
 				935C63141EBB4C7900EA6A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		935C63151EBB4C7900EA6A8A /* Build configuration list for PBXNativeTarget "ios generalUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +539,7 @@
 				935C63171EBB4C7900EA6A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
