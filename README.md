@@ -3,9 +3,9 @@ This repo demonstrates base things in iOS, objective-c and swift.
 
 ### Contents:
 
-- [ ] Objective-C Basics
-- [ ] Git
-- [ ] iOS Basics
+- [x] Objective-C Basics
+- [x] Git
+- [x] iOS Basics
 - [ ] UITableView and Segues
 - [ ] Delegation
 - [ ] Autolayout
