@@ -10,6 +10,12 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UITextField *inputField;
+@property (nonatomic, strong) IBOutlet UIButton *setText;
+
+- (IBAction)setText:(id)sender;
+
 
 @end
 

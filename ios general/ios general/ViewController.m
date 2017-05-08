@@ -27,5 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)setText:(id)sender
+{
+    NSString *textFieldText = self.inputField.text;
+    self.label.text = textFieldText;
+}
+
 
 @end
