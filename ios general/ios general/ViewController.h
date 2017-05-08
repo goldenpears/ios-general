@@ -10,9 +10,9 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *label;
-@property (nonatomic, strong) IBOutlet UITextField *inputField;
-@property (nonatomic, strong) IBOutlet UIButton *setText;
+@property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UITextField *inputField;
+@property (nonatomic, weak) IBOutlet UIButton *setText;
 
 - (IBAction)setText:(id)sender;
 
