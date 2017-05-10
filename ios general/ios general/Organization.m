@@ -57,7 +57,6 @@
         self.employees = @[];
         self.employees = [self.employees arrayByAddingObject:employee];
     }
-//    NSLog(@"Add new Employee via 'addEmployee' method: %@", employee);
     NSLog(@"All Employees in %@: %@", self.name, self.employees);
 }
 
@@ -125,6 +124,12 @@
     {
         NSLog(@"There is no employee with name: %@ works for '%@' organization", employee.fullName, self.name);
     }
+}
+
+- (NSArray<Employee *> *) getAllEmployees
+{
+    NSLog(@"All Employess: %@", self.employees);
+    return self.employees;
 }
 
 @end

@@ -12,5 +12,6 @@
 - (Employee *)employeeWithLowestSalary;
 - (NSArray<Employee *> *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 - (void)removeEmployee:(Employee *)employee;
+- (NSArray<Employee *> *) getAllEmployees;
 
 @end
