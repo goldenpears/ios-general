@@ -3,7 +3,8 @@
 
 @interface Organization : NSObject
 
-@property(nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSArray<Employee *> *allEmployees;
 
 - (instancetype)initWithName:(NSString *)name;
 - (void)addEmployeeWithName:(NSString *)employeeName;
