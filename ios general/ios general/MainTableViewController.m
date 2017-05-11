@@ -1,5 +1,6 @@
 #import "MainTableViewController.h"
 #import "DetailViewController.h"
+#import "CreateEmployeeViewController.h"
 #import "Organization.h"
 
 @interface MainTableViewController ()
@@ -38,14 +39,21 @@
 - (void)insertNewObject:(id)sender
 {
     NSLog(@"Add button was pressed");
+    CreateEmployeeViewController *createController = [[CreateEmployeeViewController alloc] init];
+    createController.mainController = self;
+//    [self pushViewController:createController animated:YES];
+    [self performSegueWithIdentifier:@"AddNewEmployee" sender:self];
+}
+
+- (void)showNewEmployee:(Employee *)employee
+{
+    NSLog(@"SHOW NEW, %@", employee);
     if (!self.employees)
     {
         self.employees = [[NSArray<Employee *> alloc] init];
     }
-    Employee *employee = [[Employee alloc] initWithFirstName:@"Add Employee" lastName:@"For Nothing" salary:arc4random_uniform(4000)];
     self.employees = [self.employees arrayByAddingObject:employee];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.employees.count - 1 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.employees.count - 1 inSection:0]; // add to the end of table
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -68,13 +76,19 @@
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.employee = self.selectedEmployee;
     }
+    
+    if ([segue.identifier isEqualToString:@"AddNewEmployee"])
+    {
+        CreateEmployeeViewController *createController = segue.destinationViewController;
+        createController.mainController = self;
+
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.employees.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import "Employee.h"
 #import "Organization.h"
+#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -10,7 +11,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    Employee *employee1 = [[Employee alloc] initWithFirstName:@"Genady" lastName:@"Adolfovich" salary:100];
+    Employee *employee1 = [[Employee alloc] initWithFirstName:@"Genady" lastName:@"Adolfovich" salary:100];
 //    Employee *employee2 = [[Employee alloc] initWithFirstName:@"Arnold" lastName:@"Hey" salary:7600];
 //    
 //    Organization *org = [[Organization alloc] initWithName:@"NextStep"];
@@ -33,6 +34,9 @@
 //
     
     NSLog(@"Nothing here!");
+    MainTableViewController *c = [[MainTableViewController alloc] init];
+    NSLog(@"Controller: %@", c);
+    [c showNewEmployee:employee1];
     
     return YES;
 }

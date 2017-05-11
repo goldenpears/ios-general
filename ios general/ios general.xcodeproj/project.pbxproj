@@ -17,6 +17,7 @@
 		937055771EC30B470047F4EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937055721EC30B470047F4EF /* Main.storyboard */; };
 		937055811EC323360047F4EF /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937055801EC323360047F4EF /* MainTableViewController.m */; };
 		937055861EC3294C0047F4EF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937055851EC3294C0047F4EF /* DetailViewController.m */; };
+		AE166EBE1EC4A4C700CE15BA /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE166EBD1EC4A4C700CE15BA /* CreateEmployeeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		937055801EC323360047F4EF /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		937055841EC3294C0047F4EF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		937055851EC3294C0047F4EF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		AE166EBC1EC4A4C700CE15BA /* CreateEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEmployeeViewController.h; sourceTree = "<group>"; };
+		AE166EBD1EC4A4C700CE15BA /* CreateEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEmployeeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				937055801EC323360047F4EF /* MainTableViewController.m */,
 				937055841EC3294C0047F4EF /* DetailViewController.h */,
 				937055851EC3294C0047F4EF /* DetailViewController.m */,
+				AE166EBC1EC4A4C700CE15BA /* CreateEmployeeViewController.h */,
+				AE166EBD1EC4A4C700CE15BA /* CreateEmployeeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			files = (
 				935C63221EBB506100EA6A8A /* Employee.m in Sources */,
 				935C62EA1EBB4C7800EA6A8A /* AppDelegate.m in Sources */,
+				AE166EBE1EC4A4C700CE15BA /* CreateEmployeeViewController.m in Sources */,
 				935C62E71EBB4C7800EA6A8A /* main.m in Sources */,
 				937055811EC323360047F4EF /* MainTableViewController.m in Sources */,
 				935C63231EBB506100EA6A8A /* Organization.m in Sources */,
