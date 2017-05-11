@@ -14,7 +14,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+  
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+  
     Employee *employee1 = [[Employee alloc] initWithFirstName:@"Genady" lastName:@"Adolfovich" salary:100];
     Employee *employee2 = [[Employee alloc] initWithFirstName:@"Arnold" lastName:@"Hey" salary:7600];
 
@@ -30,6 +33,20 @@
     [org addEmployee:[[Employee alloc] initWithFirstName:@"Beda" lastName:@"Marfa" salary:400]];
     
     self.employees = org.allEmployees;
+}
+
+- (void)insertNewObject:(id)sender
+{
+    NSLog(@"Add button was pressed");
+    if (!self.employees)
+    {
+        self.employees = [[NSArray<Employee *> alloc] init];
+    }
+    Employee *employee = [[Employee alloc] initWithFirstName:@"Add Employee" lastName:@"For Nothing" salary:arc4random_uniform(4000)];
+    self.employees = [self.employees arrayByAddingObject:employee];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.employees.count - 1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)didReceiveMemoryWarning
