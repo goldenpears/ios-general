@@ -1,11 +1,3 @@
-//
-//  DetailViewController.m
-//  ios general
-//
-//  Created by Darina Lokovna on 5/10/17.
-//  Copyright © 2017 Darina Locovna. All rights reserved.
-//
-
 #import "DetailViewController.h"
 #import "MainTableViewController.h"
 
@@ -15,13 +7,16 @@
 
 @implementation DetailViewController
 
-- (void)configureView {
-    if (self.employee) {
-        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@", self.employee];
+- (void)configureView
+{
+    if (self.employee)
+    {
+        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@ \'s salary is: %d", self.employee, self.employee.salary];
     }
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self configureView];
     
@@ -29,27 +24,18 @@
     NSLog(@"Current Employee: %@", self.employee);
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (void)setDetailItem:(Employee *)newEmployee {
-    if (_employee != newEmployee) {
+- (void)setDetailItem:(Employee *)newEmployee
+{
+    if (_employee != newEmployee)
+    {
         _employee = newEmployee;
-        
-        // Update the view.
-        [self configureView];
+        [self configureView]; // Update the view
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

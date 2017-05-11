@@ -29,10 +29,9 @@
     
     // check for whitespace in name
     NSRange whiteSpaceRange = [employeeName rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]];
-    if (whiteSpaceRange.location != NSNotFound) {
+    if (whiteSpaceRange.location != NSNotFound)
+    {
         NSArray * employeeNameArray = [employeeName componentsSeparatedByString:@" "];
-//        NSLog(@"New name values are : %@", employeeNameArray);
-        
         Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeNameArray[0] lastName:employeeNameArray[1] salary:randomSalary];
         [self addEmployee:newEmployee];
     }
@@ -42,7 +41,6 @@
         Employee *newEmployee = [[Employee alloc] initWithFirstName:employeeName lastName:@"Undefined" salary:randomSalary];
         [self addEmployee:newEmployee];
     }
-//    NSLog(@"All Employees in %@: %@",self.name , self.employees);
 }
 
 
@@ -63,7 +61,7 @@
 
 - (int)calculateAverageSalary
 {
-    NSNumber *salary = [self.employees valueForKeyPath:@"@avg.salary"];;
+    NSNumber *salary = [self.employees valueForKeyPath:@"@avg.salary"];
     int result = [salary intValue];
     
     for (Employee *e in self.employees)
@@ -126,7 +124,7 @@
     }
 }
 
-- (NSArray<Employee *> *) getAllEmployees
+- (NSArray<Employee *> *)allEmployees
 {
     NSLog(@"All Employess: %@", self.employees);
     return self.employees;
