@@ -41,7 +41,6 @@
     NSLog(@"Add button was pressed");
     CreateEmployeeViewController *createController = [[CreateEmployeeViewController alloc] init];
     createController.mainController = self;
-//    [self pushViewController:createController animated:YES];
     [self performSegueWithIdentifier:@"AddNewEmployee" sender:self];
 }
 

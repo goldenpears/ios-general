@@ -11,6 +11,10 @@
     [super viewDidLoad];
     self.title = @"Add new Employee";
     
+    [self.firstNameField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.lastNameField  addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.salaryField    addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveNewObject:)];
     self.navigationItem.rightBarButtonItem = saveButton;
 }
@@ -18,26 +22,40 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)textFieldDidChange:(UITextField *)textField
+{
+    NSLog(@"Something happend in: %@", textField);
+    if ([textField.text isEqualToString:@""])
+    {
+        self.statusLabel.text = @"All fields are required";
+        textField.layer.borderColor = [[UIColor colorWithRed:1.00 green:0.34 blue:0.34 alpha:1.0] CGColor]; // red
+        textField.layer.borderWidth = 1.0;
+        textField.layer.cornerRadius = 5.0f;
+        NSLog(@"Some Field is empty");
+        return NO;
+    }
+    else
+    {
+        textField.layer.borderColor = [[UIColor colorWithRed:0.48 green:0.89 blue:0.77 alpha:1.0] CGColor]; // light-green
+        return YES;
+    }
 }
 
 - (void)saveNewObject:(id)sender
 {
     NSLog(@"Save button was pressed");
-    Employee *employee = [[Employee alloc] initWithFirstName:@"Saved" lastName:@"Employee" salary:arc4random_uniform(4000)];
-    
-    [self.mainController showNewEmployee:employee];
-    NSLog(@"Link to controller: %@", self.mainController);
+    if ([self textFieldDidChange:self.firstNameField] && [self textFieldDidChange:self.lastNameField] && [self textFieldDidChange:self.salaryField])
+    {
+        Employee *employee = [[Employee alloc] initWithFirstName:self.firstNameField.text lastName:self.lastNameField.text salary:[self.salaryField.text intValue]];
+        [self.mainController showNewEmployee:employee];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
+         NSLog(@"Can not save new object");
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
