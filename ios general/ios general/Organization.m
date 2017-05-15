@@ -52,7 +52,7 @@
         self.employees = @[];
         self.employees = [self.employees arrayByAddingObject:employee];
     }
-    NSLog(@"All Employees in %@: %@", self.name, self.employees);
+//    NSLog(@"All Employees in %@: %@", self.name, self.employees);
 }
 
 - (int)calculateAverageSalary

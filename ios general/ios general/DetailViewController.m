@@ -19,7 +19,6 @@
 {
     [super viewDidLoad];
     [self configureView];
-    
     self.title = [NSString stringWithFormat:@"%@", self.employee];
     NSLog(@"Current Employee: %@", self.employee);
 }
@@ -31,9 +30,9 @@
 
 - (void)setDetailItem:(Employee *)newEmployee
 {
-    if (_employee != newEmployee)
+    if (self.employee != newEmployee)
     {
-        _employee = newEmployee;
+        self.employee = newEmployee;
         [self configureView]; // Update the view
     }
 }

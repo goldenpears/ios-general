@@ -26,7 +26,6 @@
 
 -(BOOL)textFieldDidChange:(UITextField *)textField
 {
-    NSLog(@"Something happend in: %@", textField);
     if ([textField.text isEqualToString:@""])
     {
         self.statusLabel.text = @"All fields are required";
@@ -49,8 +48,8 @@
     if ([self textFieldDidChange:self.firstNameField] && [self textFieldDidChange:self.lastNameField] && [self textFieldDidChange:self.salaryField])
     {
         Employee *employee = [[Employee alloc] initWithFirstName:self.firstNameField.text lastName:self.lastNameField.text salary:[self.salaryField.text intValue]];
-        [self.mainController showNewEmployee:employee];
         [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.delegate showNewEmployee:employee];
     }
     else
     {
