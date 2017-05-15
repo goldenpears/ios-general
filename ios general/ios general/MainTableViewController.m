@@ -1,8 +1,9 @@
 #import "MainTableViewController.h"
 #import "DetailViewController.h"
+#import "CreateEmployeeViewController.h"
 #import "Organization.h"
 
-@interface MainTableViewController ()
+@interface MainTableViewController () <AddControllerDelegate>
 
 @property (nonatomic, strong) NSArray<Employee *> *employees;
 @property (nonatomic, weak) Employee *selectedEmployee;
@@ -14,27 +15,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    Employee *employee1 = [[Employee alloc] initWithFirstName:@"Genady" lastName:@"Adolfovich" salary:100];
-    Employee *employee2 = [[Employee alloc] initWithFirstName:@"Arnold" lastName:@"Hey" salary:7600];
-
-    Organization *org = [[Organization alloc] initWithName:@"NextStep"];
-
-    [org addEmployeeWithName:@"Someone Anyone"];
-    [org addEmployeeWithName:@"NameWith Space"];
-    [org addEmployeeWithName:@"NameWith1 Two Spaces"];
-    [org addEmployeeWithName:@"NameWitoutSpace"];
-
-    [org addEmployee:employee1];
-    [org addEmployee:employee2];
-    [org addEmployee:[[Employee alloc] initWithFirstName:@"Beda" lastName:@"Marfa" salary:400]];
-    
-    self.employees = org.allEmployees;
+    NSLog(@"All employess: %@", self.employees);
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)addButtonTapped:(UIBarButtonItem *)sender
 {
-    [super didReceiveMemoryWarning];
+    NSLog(@"Add button was tapped");
+    [self performSegueWithIdentifier:@"AddNewEmployee" sender:self];
+
+}
+
+- (void)addNewEmployee:(Employee *)employee
+{
+    if (!self.employees)
+    {
+        self.employees = [[NSArray<Employee *> alloc] init];
+    }
+    [self.tableView beginUpdates];
+    self.employees = [self.employees arrayByAddingObject:employee];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.employees.count - 1 inSection:0]; // add to the end of table
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+    
+    NSLog(@"Add new employee: %@", employee);
+    NSLog(@"All employess after add one: %@", self.employees);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,8 +52,13 @@
 {
     if ([segue.identifier isEqualToString:@"showEmployeeDetails"])
     {
-        DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.employee = self.selectedEmployee;
+        DetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.employee = self.selectedEmployee;
+    }
+    if ([segue.identifier isEqualToString:@"AddNewEmployee"])
+    {
+        CreateEmployeeViewController *createController = segue.destinationViewController;
+        createController.delegate = self;
     }
 }
 
@@ -57,7 +66,6 @@
 {
     return self.employees.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

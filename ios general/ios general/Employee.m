@@ -8,6 +8,7 @@
 @end
 
 @implementation Employee : NSObject
+
 - (instancetype)initWithFirstName:(NSString *)name lastName:(NSString *)lastname salary:(int)salary
 {
     self = [super init];
@@ -26,7 +27,6 @@
     NSString *fullName = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
     return fullName;
 }
-
 
 - (NSString *)description
 {

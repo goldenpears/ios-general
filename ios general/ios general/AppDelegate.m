@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import "Employee.h"
 #import "Organization.h"
+#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -31,9 +32,6 @@
 //    [org removeEmployee:employee2];
 //    [org removeEmployee:[[Employee alloc] initWithFirstName:@"SomeoneWho" lastName:@"DoesntExist" salary:0]];
 //
-    
-    NSLog(@"Nothing here!");
-    
     return YES;
 }
 

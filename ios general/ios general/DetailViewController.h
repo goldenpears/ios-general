@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "Employee.h"
+
+@class Employee;
 
 @interface DetailViewController : UIViewController
 

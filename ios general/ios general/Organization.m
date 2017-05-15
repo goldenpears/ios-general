@@ -7,7 +7,6 @@
 
 @end
 
-
 @implementation Organization : NSObject
 
 - (instancetype)initWithName:(NSString *)name
@@ -20,7 +19,6 @@
     NSLog(@"New Organization: %@", name);
     return self;
 }
-
 
 - (void)addEmployeeWithName:(NSString *)employeeName
 {
@@ -43,7 +41,6 @@
     }
 }
 
-
 - (void)addEmployee:(Employee *)employee
 {
     if (self.employees)
@@ -55,9 +52,8 @@
         self.employees = @[];
         self.employees = [self.employees arrayByAddingObject:employee];
     }
-    NSLog(@"All Employees in %@: %@", self.name, self.employees);
+//    NSLog(@"All Employees in %@: %@", self.name, self.employees);
 }
-
 
 - (int)calculateAverageSalary
 {
@@ -71,7 +67,6 @@
     NSLog(@"Average salary is: %d", result);
     return result;
 }
-
 
 - (Employee *)employeeWithLowestSalary
 {
@@ -88,7 +83,6 @@
     NSLog(@"Employee with the lowest salary: %@, %d", employee.fullName, employee.salary);
     return employee;
 }
-
 
 - (NSArray<Employee *> *)employeesWithSalary:(int)salary tolerance:(int)tolerance
 {
