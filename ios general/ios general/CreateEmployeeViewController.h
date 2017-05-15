@@ -1,10 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "MainTableViewController.h"
+
+@class Employee;
 
 @protocol AddControllerDelegate
-
-@required
-- (void)showNewEmployee:(id)sender;
+- (void)addNewEmployee:(Employee *)employee;
 @end
 
 @interface CreateEmployeeViewController : UIViewController
@@ -18,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *salaryField;
 
-@property (nonatomic, weak) id<AddControllerDelegate> delegate;
+@property (weak, nonatomic) id<AddControllerDelegate> delegate;
 
 @end

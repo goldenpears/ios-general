@@ -1,5 +1,6 @@
 #import "DetailViewController.h"
 #import "MainTableViewController.h"
+#import "Employee.h"
 
 @interface DetailViewController ()
 
@@ -23,17 +24,12 @@
     NSLog(@"Current Employee: %@", self.employee);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void)setDetailItem:(Employee *)newEmployee
 {
     if (self.employee != newEmployee)
     {
         self.employee = newEmployee;
-        [self configureView]; // Update the view
+        [self configureView];
     }
 }
 

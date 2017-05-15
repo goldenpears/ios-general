@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "Employee.h"
+
+@class Employee;
 
 @interface MainTableViewController : UITableViewController
 
-- (void)showNewEmployee:(Employee *)employee;
+- (void)addNewEmployee:(Employee *)employee;
 
 @end

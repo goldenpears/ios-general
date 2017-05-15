@@ -41,26 +41,32 @@
                             <outlet property="delegate" destination="4eW-IZ-sju" id="jC6-gY-uKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8c0-gk-PDP"/>
+                    <navigationItem key="navigationItem" id="8c0-gk-PDP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="c6o-yE-TC4">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="4eW-IZ-sju" id="FA0-r2-nLX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="hMr-ni-4Gt" kind="show" identifier="showEmployeeDetails" id="qdz-YA-Yre"/>
-                        <segue destination="TNA-OV-BNm" kind="show" identifier="AddNewEmployee" id="JIP-PO-uCY"/>
+                        <segue destination="TNA-OV-BNm" kind="show" identifier="AddNewEmployee" id="KIa-wO-xnC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEu-mz-yPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-433" y="-190"/>
         </scene>
-        <!--Create Employee View Controller-->
+        <!--Add new Employee-->
         <scene sceneID="GSI-XX-mnm">
             <objects>
-                <viewController id="TNA-OV-BNm" customClass="CreateEmployeeViewController" sceneMemberID="viewController">
+                <viewController title="Add new Employee" id="TNA-OV-BNm" customClass="CreateEmployeeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sf2-5k-4JB"/>
                         <viewControllerLayoutGuide type="bottom" id="ACJ-hx-1kC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nVS-RV-bd4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-jb-tts">
@@ -69,6 +75,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="TNA-OV-BNm" eventType="editingChanged" id="h6f-G6-hIE"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-iY-r0B">
                                 <rect key="frame" x="46" y="127" width="229" height="21"/>
@@ -83,6 +92,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="TNA-OV-BNm" eventType="editingChanged" id="xPL-pG-68e"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-wr-pd5">
                                 <rect key="frame" x="46" y="210" width="73.5" height="18"/>
@@ -97,6 +109,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="TNA-OV-BNm" eventType="editingChanged" id="izE-7q-GlD"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVu-5W-Zn7">
                                 <rect key="frame" x="46" y="295" width="42.5" height="18"/>
@@ -115,6 +130,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add new Employee" id="osa-Uq-tC8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="D37-vX-tmZ">
+                            <connections>
+                                <action selector="saveNewEmployeeButtonTapped:" destination="TNA-OV-BNm" id="UQi-mr-Lkm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="firstNameField" destination="DHe-jb-tts" id="BiO-Ha-RVe"/>
                         <outlet property="firstNameLabel" destination="DhH-iY-r0B" id="PXi-GS-xD2"/>
@@ -127,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDS-WR-POI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433.125" y="554.57746478873241"/>
+            <point key="canvasLocation" x="-433" y="544"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="lF6-H1-vte">

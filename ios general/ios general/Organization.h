@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "Employee.h"
+
+@class Employee;
 
 @interface Organization : NSObject
 
