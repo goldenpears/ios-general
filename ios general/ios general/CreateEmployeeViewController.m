@@ -27,7 +27,6 @@
 {
     if (textField.text.length == 0)
     {
-        self.statusLabel.text = @"All fields are required";
         textField.layer.borderColor = [UIColor colorWithRed:1.00f green:0.34f blue:0.34f alpha:1.0f].CGColor; // red
         textField.layer.borderWidth = 1.0f;
         textField.layer.cornerRadius = 5.0f;
