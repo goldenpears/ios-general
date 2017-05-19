@@ -13,11 +13,9 @@
 		935C630B1EBB4C7900EA6A8A /* ios_generalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C630A1EBB4C7900EA6A8A /* ios_generalUITests.m */; };
 		937055751EC30B470047F4EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937055701EC30B470047F4EF /* Assets.xcassets */; };
 		937055771EC30B470047F4EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937055721EC30B470047F4EF /* Main.storyboard */; };
-		AE6DBDC41ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDB71ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m */; };
 		AE6DBDC51ECCB3150035C3CB /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDB91ECCB3150035C3CB /* EmployeeMO+CoreDataProperties.m */; };
 		AE6DBDC61ECCB3150035C3CB /* EmployeeMO+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */; };
 		AE6DBDC71ECCB3150035C3CB /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */; };
-		AE6DBDC81ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBF1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m */; };
 		AE6DBDC91ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDC11ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m */; };
 		AE6DBDCA1ECCB3150035C3CB /* OrganizationMO+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDC31ECCB3150035C3CB /* OrganizationMO+Custom.m */; };
 		AE6DBDD31ECCB4C10035C3CB /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDCE1ECCB4C10035C3CB /* CreateEmployeeViewController.m */; };
@@ -134,7 +132,6 @@
 				935C62E91EBB4C7800EA6A8A /* AppDelegate.m */,
 				AE6DBDCC1ECCB4C10035C3CB /* Controller */,
 				AE6DBDB51ECCB3150035C3CB /* CoreData */,
-				937055831EC3269C0047F4EF /* Controller */,
 				935C62E51EBB4C7800EA6A8A /* Supporting Files */,
 			);
 			path = "ios general";
@@ -168,23 +165,16 @@
 			path = "ios generalUITests";
 			sourceTree = "<group>";
 		};
-		937055831EC3269C0047F4EF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		AE6DBDB51ECCB3150035C3CB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */,
 				AE6DBDB61ECCB3150035C3CB /* EmployeeMO+CoreDataClass.h */,
 				AE6DBDB71ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m */,
 				AE6DBDB81ECCB3150035C3CB /* EmployeeMO+CoreDataProperties.h */,
 				AE6DBDB91ECCB3150035C3CB /* EmployeeMO+CoreDataProperties.m */,
 				AE6DBDBA1ECCB3150035C3CB /* EmployeeMO+Custom.h */,
 				AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */,
-				AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */,
 				AE6DBDBE1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.h */,
 				AE6DBDBF1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m */,
 				AE6DBDC01ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.h */,
@@ -353,13 +343,11 @@
 				AE6DBDCA1ECCB3150035C3CB /* OrganizationMO+Custom.m in Sources */,
 				AE6DBDC91ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m in Sources */,
 				935C62EA1EBB4C7800EA6A8A /* AppDelegate.m in Sources */,
-				AE6DBDC81ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m in Sources */,
 				AE6DBDC71ECCB3150035C3CB /* model.xcdatamodeld in Sources */,
 				AE6DBDD41ECCB4C10035C3CB /* DetailViewController.m in Sources */,
 				AE6DBDD51ECCB4C10035C3CB /* MainTableViewController.m in Sources */,
 				935C62E71EBB4C7800EA6A8A /* main.m in Sources */,
 				AE6DBDC51ECCB3150035C3CB /* EmployeeMO+CoreDataProperties.m in Sources */,
-				AE6DBDC41ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

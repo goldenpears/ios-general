@@ -15,13 +15,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     return YES;
+    
 }
 
 - (NSURL *)applicationDocumentsDirectory
 {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "me.meberhard.AnotherText" in the user's Application Support directory.
     NSURL *appSupportURL = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"me.meberhard.WordpressConnect"];
+    return [appSupportURL URLByAppendingPathComponent:@"locovna.com.ios-general"];
+    NSLog(@"Directory: %@", [self applicationDocumentsDirectory]);
+    
 }
 
 - (NSManagedObjectModel *)managedObjectModel
@@ -69,7 +71,8 @@
     if (!shouldFail && !error)
     {
         NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.storedata"];
+//        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.storedata"];
+        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.sqlite"];
         if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error])
         {
             coordinator = nil;
@@ -111,5 +114,14 @@
     return _managedObjectContext;
 }
 
+- (void)saveContext
+{
+    NSError *error = nil;
+    if ([[self managedObjectContext] save:&error] == NO)
+    {
+        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
+}
 
 @end
+ 

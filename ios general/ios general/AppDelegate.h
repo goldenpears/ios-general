@@ -8,8 +8,7 @@
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-//- (void)saveContext;
-
+- (void)saveContext;
 + (AppDelegate *)shared;
 
 @end
