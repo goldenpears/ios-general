@@ -1,9 +1,7 @@
 #import "DetailViewController.h"
-#import "MainTableViewController.h"
 #import "EmployeeMO+CoreDataClass.h"
 
 @interface DetailViewController ()
-
 @end
 
 @implementation DetailViewController
