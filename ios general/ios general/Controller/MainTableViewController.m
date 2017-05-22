@@ -35,7 +35,7 @@
         self.currentOrganization = results.firstObject;
     }
     
-    self.employees = self.currentOrganization.sortedEmployeeArray;
+    self.employees = self.currentOrganization.sortedEmployee;
     NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
     NSLog(@"Sorted array: %@", self.employees);
     
@@ -55,7 +55,7 @@
     [self.currentOrganization addEmployeesObject:employee];
     [[AppDelegate shared] saveContext];
     
-    self.employees = self.currentOrganization.sortedEmployeeArray;
+    self.employees = self.currentOrganization.sortedEmployee;
     NSLog(@"Sorted array after additon: %@", self.employees);
     
     [self.tableView beginUpdates];
@@ -114,7 +114,7 @@
         NSLog(@"Set after delete: %@", self.currentOrganization.employees);
         [[AppDelegate shared] saveContext];
         
-       self.employees = self.currentOrganization.sortedEmployeeArray;
+       self.employees = self.currentOrganization.sortedEmployee;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }

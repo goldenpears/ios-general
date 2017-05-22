@@ -41,7 +41,7 @@
     return employees;
 }
 
-- (NSArray<EmployeeMO *> *)sortedEmployeeArray
+- (NSArray<EmployeeMO *> *)sortedEmployee
 {
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     NSArray *sortDescriptors = @[descriptor];
