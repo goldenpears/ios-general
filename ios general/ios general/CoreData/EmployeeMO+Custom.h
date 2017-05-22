@@ -3,8 +3,4 @@
 
 @interface EmployeeMO (Custom)
 
-@property (nonatomic, readonly) NSString *fullName;
-
-- (NSString *)fullName;
-
 @end

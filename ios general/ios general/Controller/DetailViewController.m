@@ -10,7 +10,7 @@
 {
     if (self.employee)
     {
-        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@ %@ \'s salary is: %d", self.employee.firstName, self.employee.lastName, self.employee.salary];
+        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@\'s salary is: %d", self.employee, self.employee.salary];
     }
 }
 
@@ -18,8 +18,8 @@
 {
     [super viewDidLoad];
     [self configureView];
-    self.title = [NSString stringWithFormat:@"%@", self.employee.firstName];
-    NSLog(@"Current Employee: %@", self.employee.firstName);
+    self.title = [NSString stringWithFormat:@"%@", self.employee];
+    NSLog(@"Current Employee: %@", self.employee);
 }
 
 - (void)setDetailItem:(EmployeeMO *)newEmployee

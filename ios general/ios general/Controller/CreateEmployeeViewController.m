@@ -20,11 +20,7 @@
         newEmployee.salary = self.salaryField.text.intValue;
         NSLog(@"New Employee: %@", newEmployee);
         
-        NSError *error = nil;
-        if (![context save:&error])
-        {
-            NSLog(@"Can't save new Employee: %@ %@", error, error.userInfo);
-        }
+        [[AppDelegate shared] saveContext];
         [self.delegate addNewEmployee:newEmployee];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }

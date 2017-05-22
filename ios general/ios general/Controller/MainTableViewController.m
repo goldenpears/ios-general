@@ -2,7 +2,7 @@
 #import "DetailViewController.h"
 #import "CreateEmployeeViewController.h"
 #import "EmployeeMO+Custom.h"
-#import "OrganizationMO+CoreDataClass.h"
+#import "OrganizationMO+Custom.h"
 #import "AppDelegate.h"
 
 @interface MainTableViewController () <AddControllerDelegate>
@@ -24,7 +24,7 @@
     NSError *error = nil;
     NSArray *results = [context executeFetchRequest:[OrganizationMO fetchRequest] error:&error];
     
-    if (!results || [results count] == 0)
+    if (results.count == 0)
     {
         // if Organization doesn't exist, create one
         self.currentOrganization = [NSEntityDescription insertNewObjectForEntityForName:@"Organization" inManagedObjectContext:context];
@@ -32,14 +32,15 @@
     }
     else
     {
-        self.currentOrganization = [results objectAtIndex:0];
+        self.currentOrganization = results.firstObject;
     }
     
-    self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+    self.employees = self.currentOrganization.sortedEmployeeArray;
+    NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
     NSLog(@"Sorted array: %@", self.employees);
     
     self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
-    [context save:nil];
+    [[AppDelegate shared] saveContext];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -51,25 +52,17 @@
 
 - (void)addNewEmployee:(EmployeeMO *)employee
 {
-    NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
     [self.currentOrganization addEmployeesObject:employee];
-    [context save:nil];
+    [[AppDelegate shared] saveContext];
     
-    self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+    self.employees = self.currentOrganization.sortedEmployeeArray;
     NSLog(@"Sorted array after additon: %@", self.employees);
     
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.employees indexOfObjectIdenticalTo:employee] inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
-}
-
-- (NSArray<EmployeeMO *> *)sortEmployeeSetByKey:(NSSet<EmployeeMO *> *)employees key:(NSString*)key
-{
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:YES];
-    NSArray *sortDescriptors = @[descriptor];
-    NSArray<EmployeeMO *> *sortedArray = [employees sortedArrayUsingDescriptors:sortDescriptors];
-    return sortedArray;
+    NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,7 +114,7 @@
         NSLog(@"Set after delete: %@", self.currentOrganization.employees);
         [[AppDelegate shared] saveContext];
         
-        self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+       self.employees = self.currentOrganization.sortedEmployeeArray;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
