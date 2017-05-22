@@ -8,8 +8,8 @@ This repo demonstrates base things in iOS, objective-c and swift.
 - [x] iOS Basics
 - [x] UITableView and Segues
 - [x] Delegation
-- [ ] Autolayout
-- [ ] Basic CoreData
+- [x] Autolayout
+- [x] Basic CoreData
 - [ ] CocoaPods
 - [ ] Swift
 - [ ] Notifications
