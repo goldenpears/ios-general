@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 
-@class Employee;
+@class EmployeeMO;
 
 @protocol AddControllerDelegate
-- (void)addNewEmployee:(Employee *)employee;
+- (void)addNewEmployee:(EmployeeMO *)employee;
 @end
 
 @interface CreateEmployeeViewController : UIViewController

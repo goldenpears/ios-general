@@ -1,9 +1,7 @@
 #import "DetailViewController.h"
-#import "MainTableViewController.h"
-#import "Employee.h"
+#import "EmployeeMO+CoreDataClass.h"
 
 @interface DetailViewController ()
-
 @end
 
 @implementation DetailViewController
@@ -12,7 +10,7 @@
 {
     if (self.employee)
     {
-        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@ \'s salary is: %d", self.employee, self.employee.salary];
+        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@\'s salary is: %d", self.employee, self.employee.salary];
     }
 }
 
@@ -24,7 +22,7 @@
     NSLog(@"Current Employee: %@", self.employee);
 }
 
-- (void)setDetailItem:(Employee *)newEmployee
+- (void)setDetailItem:(EmployeeMO *)newEmployee
 {
     if (self.employee != newEmployee)
     {

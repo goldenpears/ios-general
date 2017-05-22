@@ -1,5 +1,6 @@
 #import "CreateEmployeeViewController.h"
-#import "Employee.h"
+#import "AppDelegate.h"
+#import "EmployeeMO+Custom.h"
 
 @interface CreateEmployeeViewController ()
 
@@ -12,15 +13,21 @@
     NSLog(@"Save button was pressed");
     if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.salaryField.text.length > 0)
     {
-        Employee *employee = [[Employee alloc] initWithFirstName:self.firstNameField.text lastName:self.lastNameField.text salary:self.salaryField.text.intValue];
+        NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
+        EmployeeMO *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
+        newEmployee.firstName = self.firstNameField.text;
+        newEmployee.lastName = self.lastNameField.text;
+        newEmployee.salary = self.salaryField.text.intValue;
+        NSLog(@"New Employee: %@", newEmployee);
+        
+        [[AppDelegate shared] saveContext];
+        [self.delegate addNewEmployee:newEmployee];
         [self.navigationController popToRootViewControllerAnimated:YES];
-        [self.delegate addNewEmployee:employee];
     }
     else
     {
         NSLog(@"Can not save new object");
     }
-    
 }
 
 - (IBAction)textChanged:(UITextField *)textField
