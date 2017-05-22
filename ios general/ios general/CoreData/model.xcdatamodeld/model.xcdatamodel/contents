@@ -8,10 +8,10 @@
     </entity>
     <entity name="Organization" representedClassName="OrganizationMO" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="organization" inverseEntity="Employee" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Employee" inverseName="organization" inverseEntity="Employee" syncable="YES"/>
     </entity>
     <elements>
         <element name="Employee" positionX="-45" positionY="0" width="128" height="103"/>
-        <element name="Organization" positionX="180" positionY="26" width="128" height="73"/>
+        <element name="Organization" positionX="180" positionY="26" width="128" height="75"/>
     </elements>
 </model>

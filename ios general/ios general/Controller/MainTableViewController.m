@@ -9,7 +9,7 @@
 
 @property (nonatomic, strong) NSArray<EmployeeMO *> *employees;
 @property (nonatomic, weak) EmployeeMO *selectedEmployee;
-@property (nonatomic, weak) OrganizationMO *currentOrganization;
+@property (nonatomic, strong) OrganizationMO *currentOrganization;
 
 @end
 
@@ -18,6 +18,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    // Check if Organization exist
+    NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
+    NSError *error = nil;
+    NSArray *results = [context executeFetchRequest:[OrganizationMO fetchRequest] error:&error];
+    
+    if (!results || [results count] == 0)
+    {
+        // if Organization doesn't exist, create one
+        self.currentOrganization = [NSEntityDescription insertNewObjectForEntityForName:@"Organization" inManagedObjectContext:context];
+        self.currentOrganization.name = @"Default Organization";
+    }
+    else
+    {
+        self.currentOrganization = [results objectAtIndex:0];
+    }
+    
+    self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+    NSLog(@"Sorted array: %@", self.employees);
+    
+    self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
+    [context save:nil];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -29,7 +51,25 @@
 
 - (void)addNewEmployee:(EmployeeMO *)employee
 {
-    NSLog(@"New employ at MainTable: %@", employee);
+    NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
+    [self.currentOrganization addEmployeesObject:employee];
+    [context save:nil];
+    
+    self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+    NSLog(@"Sorted array after additon: %@", self.employees);
+    
+    [self.tableView beginUpdates];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.employees indexOfObjectIdenticalTo:employee] inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+}
+
+- (NSArray<EmployeeMO *> *)sortEmployeeSetByKey:(NSSet<EmployeeMO *> *)employees key:(NSString*)key
+{
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:YES];
+    NSArray *sortDescriptors = @[descriptor];
+    NSArray<EmployeeMO *> *sortedArray = [employees sortedArrayUsingDescriptors:sortDescriptors];
+    return sortedArray;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,10 +102,28 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     EmployeeMO *currentEmployee = [self.employees objectAtIndex:indexPath.row];
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@",[self.employees objectAtIndex:indexPath.row]];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",currentEmployee.firstName, currentEmployee.lastName];
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        EmployeeMO *selectedEmployee = self.employees[indexPath.row];
+        [self.currentOrganization removeEmployeesObject:selectedEmployee];
+        NSLog(@"Set after delete: %@", self.currentOrganization.employees);
+        [[AppDelegate shared] saveContext];
+        
+        self.employees = [self sortEmployeeSetByKey:self.currentOrganization.employees key:@"firstName"];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 @end

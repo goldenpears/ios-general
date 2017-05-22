@@ -1,6 +1,4 @@
 #import "AppDelegate.h"
-#import "OrganizationMO+CoreDataProperties.h"
-#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -22,8 +20,6 @@
 {
     NSURL *appSupportURL = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
     return [appSupportURL URLByAppendingPathComponent:@"locovna.com.ios-general"];
-    NSLog(@"Directory: %@", [self applicationDocumentsDirectory]);
-    
 }
 
 - (NSManagedObjectModel *)managedObjectModel
@@ -33,7 +29,6 @@
     {
         return _managedObjectModel;
     }
-    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"model" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
@@ -71,7 +66,6 @@
     if (!shouldFail && !error)
     {
         NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-//        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.storedata"];
         NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.sqlite"];
         if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error])
         {
