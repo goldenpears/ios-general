@@ -1,0 +1,718 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		044B5B6A6E8335BC20A61FB4E85958D1 /* Pods-ios general-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD42DB485F167F4FAA8F3EED9211CAE6 /* Pods-ios general-dummy.m */; };
+		27501D6C7341DA865DC46DAA37EA436A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		28E7483A4CF338C56C51C7F9A66CCB46 /* HSDatePickerViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043D21B09F46F45A6D297F2D385E939 /* HSDatePickerViewController-dummy.m */; };
+		5F0BF57D672C0DAF0C92E983F83DBF39 /* HSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A8FF73DD817385EE9CA0E56DDBE853 /* HSDatePickerViewController.m */; };
+		878C49E6385B8F981488ABEC0F6F8CB2 /* Pods-ios generalUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CE80E45D6A7953D97698EE4A5C3ABF /* Pods-ios generalUITests-dummy.m */; };
+		B03B6C8B88C68333793924D236573391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BA033A9F823B93DB47AD298F0DA34073 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C95F7F7F3FB1038C7A48BBAA1755CD34 /* HSDatePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F20B34291DDC72D326A6DFA4865A81D0 /* HSDatePickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDF122A4EBCAFF99A08674A49BCBF9BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E3566EE9B644C18AA54A7E3B50DBDAEA /* Pods-ios generalTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 375140832475F4C4F089A12C6834F943 /* Pods-ios generalTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5EFF3A78A2CB787ADE387D70FF38C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C42630B2C5CE9EBC52F895E367A87286;
+			remoteInfo = HSDatePickerViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045D0ADCC3E5CC0B21275A4A9AD40286 /* libHSDatePickerViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHSDatePickerViewController.a; path = libHSDatePickerViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		114C75F798613DF0F1B250631FE52F87 /* Pods-ios generalUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios generalUITests-resources.sh"; sourceTree = "<group>"; };
+		1595194D8492D68225A3EA6E913090C4 /* Pods-ios generalTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios generalTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		190366DA34EF883F210173FF64019AE9 /* Pods-ios general-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios general-acknowledgements.markdown"; sourceTree = "<group>"; };
+		198C5BDEE84C0C2337D9C902FDB40227 /* Pods-ios general.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios general.release.xcconfig"; sourceTree = "<group>"; };
+		19B9070D1F025F59A956648216853374 /* libPods-ios general.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ios general.a"; path = "libPods-ios general.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F4B8AF5DD4CAE8F3C3A18FD9FCDD6C /* Pods-ios general-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios general-resources.sh"; sourceTree = "<group>"; };
+		375140832475F4C4F089A12C6834F943 /* Pods-ios generalTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios generalTests-dummy.m"; sourceTree = "<group>"; };
+		400DFE2FD17AE35DB08B13684A0404DD /* Pods-ios generalUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios generalUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4043D21B09F46F45A6D297F2D385E939 /* HSDatePickerViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HSDatePickerViewController-dummy.m"; sourceTree = "<group>"; };
+		44AC6650AAA33C22C6C22D7B2BB3328C /* HSDatePickerViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HSDatePickerViewController.xcconfig; sourceTree = "<group>"; };
+		5855EE17D6D813B27B57D1C84AE2C815 /* Pods-ios general-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios general-frameworks.sh"; sourceTree = "<group>"; };
+		5BA6F385B852206A74C4984498611743 /* libPods-ios generalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ios generalUITests.a"; path = "libPods-ios generalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9A0E53D7812437DA669B1B626C8928 /* libPods-ios generalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ios generalTests.a"; path = "libPods-ios generalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0DEBA501ED3EA0A4246776B9E0BE39 /* HSDatePickerViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HSDatePickerViewController.xib; path = HSDatePickerViewControllerDemo/HSDatePickerViewController/HSDatePickerViewController.xib; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		666516D90CE6979357ECEF55FD48F14F /* Pods-ios generalTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios generalTests-resources.sh"; sourceTree = "<group>"; };
+		69CDFDE302BD7EF448ACBDB62502C7C4 /* Pods-ios generalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios generalTests.release.xcconfig"; sourceTree = "<group>"; };
+		91CE80E45D6A7953D97698EE4A5C3ABF /* Pods-ios generalUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios generalUITests-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A456E798BDD95A182B506F59305C9367 /* Pods-ios generalUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios generalUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A9993AC9D3B6DEC6EC535239FBEC9199 /* Pods-ios generalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios generalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC0193C06E52CC879798FF79F2595C08 /* HSDatePickerViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HSDatePickerViewController-prefix.pch"; sourceTree = "<group>"; };
+		C1D23087BEEDF4A3009FF7578A5A66EB /* Pods-ios general.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios general.debug.xcconfig"; sourceTree = "<group>"; };
+		C1DA7D7431445DE465DA41F475409C76 /* Pods-ios generalTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios generalTests-frameworks.sh"; sourceTree = "<group>"; };
+		C25116A5F379CFB662265B03B4EC07AC /* Pods-ios generalUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios generalUITests-frameworks.sh"; sourceTree = "<group>"; };
+		C3A8FF73DD817385EE9CA0E56DDBE853 /* HSDatePickerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HSDatePickerViewController.m; path = HSDatePickerViewControllerDemo/HSDatePickerViewController/HSDatePickerViewController.m; sourceTree = "<group>"; };
+		C590D89042BF11D82F860959DA6FFBB0 /* Pods-ios generalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios generalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D98EE5E37EF86C1C384B5F3CAF8EE047 /* Pods-ios generalTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios generalTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9E8258C943475D8039021DFDD881B50 /* Pods-ios generalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios generalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F20B34291DDC72D326A6DFA4865A81D0 /* HSDatePickerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HSDatePickerViewController.h; path = HSDatePickerViewControllerDemo/HSDatePickerViewController/HSDatePickerViewController.h; sourceTree = "<group>"; };
+		FCE5F1CFB035F3E629C8170957EFB1C6 /* Pods-ios general-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios general-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD42DB485F167F4FAA8F3EED9211CAE6 /* Pods-ios general-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios general-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37A6D4D4576496B220848A80EF0D8FF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA033A9F823B93DB47AD298F0DA34073 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEA82BF5B4DBB815AB121F2E27B135F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF122A4EBCAFF99A08674A49BCBF9BB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A603708C144A6DE4385090AC50BA1706 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B03B6C8B88C68333793924D236573391 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4315DA645BB7607BF6B0B1BF3C2908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27501D6C7341DA865DC46DAA37EA436A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64D1A5036EB6EF0F351D87844903C1BF /* Pods-ios generalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				400DFE2FD17AE35DB08B13684A0404DD /* Pods-ios generalUITests-acknowledgements.markdown */,
+				A456E798BDD95A182B506F59305C9367 /* Pods-ios generalUITests-acknowledgements.plist */,
+				91CE80E45D6A7953D97698EE4A5C3ABF /* Pods-ios generalUITests-dummy.m */,
+				C25116A5F379CFB662265B03B4EC07AC /* Pods-ios generalUITests-frameworks.sh */,
+				114C75F798613DF0F1B250631FE52F87 /* Pods-ios generalUITests-resources.sh */,
+				A9993AC9D3B6DEC6EC535239FBEC9199 /* Pods-ios generalUITests.debug.xcconfig */,
+				C590D89042BF11D82F860959DA6FFBB0 /* Pods-ios generalUITests.release.xcconfig */,
+			);
+			name = "Pods-ios generalUITests";
+			path = "Target Support Files/Pods-ios generalUITests";
+			sourceTree = "<group>";
+		};
+		67FB103A1C34862AD86018237B7B9CB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D85BB67DBEA6E830C2AE7E2137BCF3B /* HSDatePickerViewController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6AD6D1B71042693FC8C5329DA9CADDAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D0DEBA501ED3EA0A4246776B9E0BE39 /* HSDatePickerViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				67FB103A1C34862AD86018237B7B9CB7 /* Pods */,
+				C5D573851410966091F12F3D837ADEB4 /* Products */,
+				C96825E935452186197E21BA5639BFBA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8300AF7099FCD40438B43FE025878238 /* Pods-ios general */ = {
+			isa = PBXGroup;
+			children = (
+				190366DA34EF883F210173FF64019AE9 /* Pods-ios general-acknowledgements.markdown */,
+				FCE5F1CFB035F3E629C8170957EFB1C6 /* Pods-ios general-acknowledgements.plist */,
+				FD42DB485F167F4FAA8F3EED9211CAE6 /* Pods-ios general-dummy.m */,
+				5855EE17D6D813B27B57D1C84AE2C815 /* Pods-ios general-frameworks.sh */,
+				23F4B8AF5DD4CAE8F3C3A18FD9FCDD6C /* Pods-ios general-resources.sh */,
+				C1D23087BEEDF4A3009FF7578A5A66EB /* Pods-ios general.debug.xcconfig */,
+				198C5BDEE84C0C2337D9C902FDB40227 /* Pods-ios general.release.xcconfig */,
+			);
+			name = "Pods-ios general";
+			path = "Target Support Files/Pods-ios general";
+			sourceTree = "<group>";
+		};
+		8D85BB67DBEA6E830C2AE7E2137BCF3B /* HSDatePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F20B34291DDC72D326A6DFA4865A81D0 /* HSDatePickerViewController.h */,
+				C3A8FF73DD817385EE9CA0E56DDBE853 /* HSDatePickerViewController.m */,
+				6AD6D1B71042693FC8C5329DA9CADDAA /* Resources */,
+				B98E884F646622C52DF125AB9E0BE757 /* Support Files */,
+			);
+			name = HSDatePickerViewController;
+			path = HSDatePickerViewController;
+			sourceTree = "<group>";
+		};
+		B98E884F646622C52DF125AB9E0BE757 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				44AC6650AAA33C22C6C22D7B2BB3328C /* HSDatePickerViewController.xcconfig */,
+				4043D21B09F46F45A6D297F2D385E939 /* HSDatePickerViewController-dummy.m */,
+				BC0193C06E52CC879798FF79F2595C08 /* HSDatePickerViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HSDatePickerViewController";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5D573851410966091F12F3D837ADEB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				045D0ADCC3E5CC0B21275A4A9AD40286 /* libHSDatePickerViewController.a */,
+				19B9070D1F025F59A956648216853374 /* libPods-ios general.a */,
+				5C9A0E53D7812437DA669B1B626C8928 /* libPods-ios generalTests.a */,
+				5BA6F385B852206A74C4984498611743 /* libPods-ios generalUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C96825E935452186197E21BA5639BFBA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8300AF7099FCD40438B43FE025878238 /* Pods-ios general */,
+				E6EB8C0896E43B04C59DC01943BAC9DF /* Pods-ios generalTests */,
+				64D1A5036EB6EF0F351D87844903C1BF /* Pods-ios generalUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E6EB8C0896E43B04C59DC01943BAC9DF /* Pods-ios generalTests */ = {
+			isa = PBXGroup;
+			children = (
+				D98EE5E37EF86C1C384B5F3CAF8EE047 /* Pods-ios generalTests-acknowledgements.markdown */,
+				1595194D8492D68225A3EA6E913090C4 /* Pods-ios generalTests-acknowledgements.plist */,
+				375140832475F4C4F089A12C6834F943 /* Pods-ios generalTests-dummy.m */,
+				C1DA7D7431445DE465DA41F475409C76 /* Pods-ios generalTests-frameworks.sh */,
+				666516D90CE6979357ECEF55FD48F14F /* Pods-ios generalTests-resources.sh */,
+				D9E8258C943475D8039021DFDD881B50 /* Pods-ios generalTests.debug.xcconfig */,
+				69CDFDE302BD7EF448ACBDB62502C7C4 /* Pods-ios generalTests.release.xcconfig */,
+			);
+			name = "Pods-ios generalTests";
+			path = "Target Support Files/Pods-ios generalTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE800B3C036E9482C587C7A58786D5F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95F7F7F3FB1038C7A48BBAA1755CD34 /* HSDatePickerViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		258D0303A05877D5A2D6F43AE23A6EAF /* Pods-ios generalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80433B6218273435867CCBF957C186FF /* Build configuration list for PBXNativeTarget "Pods-ios generalTests" */;
+			buildPhases = (
+				E2359992941110776F8023AF63D25D9F /* Sources */,
+				6BEA82BF5B4DBB815AB121F2E27B135F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ios generalTests";
+			productName = "Pods-ios generalTests";
+			productReference = 5C9A0E53D7812437DA669B1B626C8928 /* libPods-ios generalTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		579406B10DC2E4A5EDC5CC6985683C44 /* Pods-ios general */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EEF71314D0B2A3AD53670B525AAFDA7 /* Build configuration list for PBXNativeTarget "Pods-ios general" */;
+			buildPhases = (
+				ECFBE15CC2826F057DBD9EE44B228150 /* Sources */,
+				37A6D4D4576496B220848A80EF0D8FF2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82233185B2C364B9B35D2508A9824B15 /* PBXTargetDependency */,
+			);
+			name = "Pods-ios general";
+			productName = "Pods-ios general";
+			productReference = 19B9070D1F025F59A956648216853374 /* libPods-ios general.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		58F5AD20EA58B617EDA1415BC5FE295F /* Pods-ios generalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FCD2A32F4814D866D2E83001403F27A /* Build configuration list for PBXNativeTarget "Pods-ios generalUITests" */;
+			buildPhases = (
+				B911C4A93AFA7B931661E5DAED41D20A /* Sources */,
+				A603708C144A6DE4385090AC50BA1706 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ios generalUITests";
+			productName = "Pods-ios generalUITests";
+			productReference = 5BA6F385B852206A74C4984498611743 /* libPods-ios generalUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C42630B2C5CE9EBC52F895E367A87286 /* HSDatePickerViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1079D45979674CE59A5C1E56CB0CC45C /* Build configuration list for PBXNativeTarget "HSDatePickerViewController" */;
+			buildPhases = (
+				A334B40301DA95EDCB52F07879E74769 /* Sources */,
+				AF4315DA645BB7607BF6B0B1BF3C2908 /* Frameworks */,
+				AE800B3C036E9482C587C7A58786D5F2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSDatePickerViewController;
+			productName = HSDatePickerViewController;
+			productReference = 045D0ADCC3E5CC0B21275A4A9AD40286 /* libHSDatePickerViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C5D573851410966091F12F3D837ADEB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C42630B2C5CE9EBC52F895E367A87286 /* HSDatePickerViewController */,
+				579406B10DC2E4A5EDC5CC6985683C44 /* Pods-ios general */,
+				258D0303A05877D5A2D6F43AE23A6EAF /* Pods-ios generalTests */,
+				58F5AD20EA58B617EDA1415BC5FE295F /* Pods-ios generalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A334B40301DA95EDCB52F07879E74769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28E7483A4CF338C56C51C7F9A66CCB46 /* HSDatePickerViewController-dummy.m in Sources */,
+				5F0BF57D672C0DAF0C92E983F83DBF39 /* HSDatePickerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B911C4A93AFA7B931661E5DAED41D20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				878C49E6385B8F981488ABEC0F6F8CB2 /* Pods-ios generalUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2359992941110776F8023AF63D25D9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3566EE9B644C18AA54A7E3B50DBDAEA /* Pods-ios generalTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFBE15CC2826F057DBD9EE44B228150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044B5B6A6E8335BC20A61FB4E85958D1 /* Pods-ios general-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82233185B2C364B9B35D2508A9824B15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HSDatePickerViewController;
+			target = C42630B2C5CE9EBC52F895E367A87286 /* HSDatePickerViewController */;
+			targetProxy = C5EFF3A78A2CB787ADE387D70FF38C55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		11D8F4B1E31B9BB66ACA32188E97EC3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E8258C943475D8039021DFDD881B50 /* Pods-ios generalTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		25DB1163FA16D910B92095F8EAB37E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C590D89042BF11D82F860959DA6FFBB0 /* Pods-ios generalUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3FA613565A63E73A43C8D6C27AAF9E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44AC6650AAA33C22C6C22D7B2BB3328C /* HSDatePickerViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HSDatePickerViewController/HSDatePickerViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		460A3F4502C93CB223B2D96E6A93BFA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9993AC9D3B6DEC6EC535239FBEC9199 /* Pods-ios generalUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A50A301E88A1D2E0E86AD0DEDC49911D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198C5BDEE84C0C2337D9C902FDB40227 /* Pods-ios general.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAAD79028AB89E83EF29C9F9E6AE4960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69CDFDE302BD7EF448ACBDB62502C7C4 /* Pods-ios generalTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F7AC4BD914F780EC73D6EAA339667C61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D23087BEEDF4A3009FF7578A5A66EB /* Pods-ios general.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FCA23858DDD8356B535E3D0ABC29CD88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44AC6650AAA33C22C6C22D7B2BB3328C /* HSDatePickerViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HSDatePickerViewController/HSDatePickerViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1079D45979674CE59A5C1E56CB0CC45C /* Build configuration list for PBXNativeTarget "HSDatePickerViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA23858DDD8356B535E3D0ABC29CD88 /* Debug */,
+				3FA613565A63E73A43C8D6C27AAF9E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EEF71314D0B2A3AD53670B525AAFDA7 /* Build configuration list for PBXNativeTarget "Pods-ios general" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7AC4BD914F780EC73D6EAA339667C61 /* Debug */,
+				A50A301E88A1D2E0E86AD0DEDC49911D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FCD2A32F4814D866D2E83001403F27A /* Build configuration list for PBXNativeTarget "Pods-ios generalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				460A3F4502C93CB223B2D96E6A93BFA3 /* Debug */,
+				25DB1163FA16D910B92095F8EAB37E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80433B6218273435867CCBF957C186FF /* Build configuration list for PBXNativeTarget "Pods-ios generalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D8F4B1E31B9BB66ACA32188E97EC3C /* Debug */,
+				CAAD79028AB89E83EF29C9F9E6AE4960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
