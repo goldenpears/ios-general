@@ -10,7 +10,7 @@ This repo demonstrates base things in iOS, objective-c and swift.
 - [x] Delegation
 - [x] Autolayout
 - [x] Basic CoreData
-- [ ] CocoaPods
+- [x] CocoaPods
 - [ ] Swift
 - [ ] Notifications
 - [ ] Basic networking
