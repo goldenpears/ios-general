@@ -3,7 +3,10 @@
 #import "EmployeeMO+Custom.h"
 #import "HSDatePickerViewController.h"
 
-@interface CreateEmployeeViewController ()
+@interface CreateEmployeeViewController () <HSDatePickerViewControllerDelegate>
+
+@property (nonatomic, strong) NSDate *selectedDate;
+@property (weak, nonatomic) IBOutlet UIButton *setDateButton;
 
 @end
 
@@ -47,5 +50,23 @@
         textField.layer.cornerRadius = 5.0f;
     }
 }
+
+- (IBAction)setDateButtonTapped:(UIButton *)sender {
+    HSDatePickerViewController *hsdpvc = [[HSDatePickerViewController alloc] init];
+    hsdpvc.delegate = self;
+    if (self.selectedDate) {
+        hsdpvc.date = self.selectedDate;
+    }
+    [self presentViewController:hsdpvc animated:YES completion:nil];
+}
+
+- (void)hsDatePickerPickedDate:(NSDate *)date {
+    NSLog(@"Date picked %@", date);
+    NSDateFormatter *dateFormater = [NSDateFormatter new];
+    dateFormater.dateFormat = @"yyyy.MM.dd";
+    [self.setDateButton setTitle:[dateFormater stringFromDate:date] forState:UIControlStateNormal];
+    self.selectedDate = date;
+}
+
 
 @end
