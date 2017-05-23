@@ -15,13 +15,14 @@
 - (IBAction)saveNewEmployeeButtonTapped:(UIBarButtonItem *)sender
 {
     NSLog(@"Save button was pressed");
-    if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.salaryField.text.length > 0)
+    if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.salaryField.text.length > 0 && self.selectedDate)
     {
         NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
         EmployeeMO *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
         newEmployee.firstName = self.firstNameField.text;
         newEmployee.lastName = self.lastNameField.text;
         newEmployee.salary = self.salaryField.text.intValue;
+        newEmployee.dateOfBirth = self.selectedDate;
         NSLog(@"New Employee: %@", newEmployee);
         
         [[AppDelegate shared] saveContext];

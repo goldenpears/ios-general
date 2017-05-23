@@ -10,7 +10,9 @@
 {
     if (self.employee)
     {
-        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@\'s salary is: %d", self.employee, self.employee.salary];
+        NSDateFormatter *dateFormater = [NSDateFormatter new];
+        dateFormater.dateFormat = @"MM.dd";
+        self.employeeDescriptionLabel.text = [NSString stringWithFormat:@"%@\'s salary is: %d \nSay happy birthday at: %@", self.employee, self.employee.salary, [dateFormater stringFromDate:self.employee.dateOfBirth]];
     }
 }
 
