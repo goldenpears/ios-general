@@ -1,8 +1,12 @@
 #import "CreateEmployeeViewController.h"
 #import "AppDelegate.h"
 #import "EmployeeMO+Custom.h"
+#import "HSDatePickerViewController.h"
 
-@interface CreateEmployeeViewController ()
+@interface CreateEmployeeViewController () <HSDatePickerViewControllerDelegate>
+
+@property (nonatomic, strong) NSDate *selectedDate;
+@property (weak, nonatomic) IBOutlet UIButton *setDateButton;
 
 @end
 
@@ -11,13 +15,14 @@
 - (IBAction)saveNewEmployeeButtonTapped:(UIBarButtonItem *)sender
 {
     NSLog(@"Save button was pressed");
-    if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.salaryField.text.length > 0)
+    if (self.firstNameField.text.length > 0 && self.lastNameField.text.length > 0 && self.salaryField.text.length > 0 && self.selectedDate)
     {
         NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
         EmployeeMO *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
         newEmployee.firstName = self.firstNameField.text;
         newEmployee.lastName = self.lastNameField.text;
         newEmployee.salary = self.salaryField.text.intValue;
+        newEmployee.dateOfBirth = self.selectedDate;
         NSLog(@"New Employee: %@", newEmployee);
         
         [[AppDelegate shared] saveContext];
@@ -46,5 +51,23 @@
         textField.layer.cornerRadius = 5.0f;
     }
 }
+
+- (IBAction)setDateButtonTapped:(UIButton *)sender {
+    HSDatePickerViewController *hsdpvc = [[HSDatePickerViewController alloc] init];
+    hsdpvc.delegate = self;
+    if (self.selectedDate) {
+        hsdpvc.date = self.selectedDate;
+    }
+    [self presentViewController:hsdpvc animated:YES completion:nil];
+}
+
+- (void)hsDatePickerPickedDate:(NSDate *)date {
+    NSLog(@"Date picked %@", date);
+    NSDateFormatter *dateFormater = [NSDateFormatter new];
+    dateFormater.dateFormat = @"yyyy.MM.dd";
+    [self.setDateButton setTitle:[dateFormater stringFromDate:date] forState:UIControlStateNormal];
+    self.selectedDate = date;
+}
+
 
 @end

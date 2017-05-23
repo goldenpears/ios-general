@@ -1,9 +1,9 @@
 //
 //  EmployeeMO+CoreDataProperties.h
-//  ios general
+//  
 //
-//  Created by lokovna on 5/17/17.
-//  Copyright © 2017 Darina Locovna. All rights reserved.
+//  Created by lokovna on 5/23/17.
+//
 //
 
 #import "EmployeeMO+CoreDataClass.h"
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<EmployeeMO *> *)fetchRequest;
 
+@property (nullable, nonatomic, copy) NSDate *dateOfBirth;
 @property (nullable, nonatomic, copy) NSString *firstName;
 @property (nullable, nonatomic, copy) NSString *lastName;
 @property (nonatomic) int16_t salary;
