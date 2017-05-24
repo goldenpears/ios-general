@@ -16,4 +16,12 @@ class OrganizationInfoViewController: UIViewController
         super.viewDidLoad()
         NSLog("OrganizationInfoViewController is here")
     }
+    
+    @IBAction func calculateSlaryButtonTapped(_ sender: UIButton)
+    {
+        let alert = UIAlertController(title: "Skin Type", message: "Please Choose Skin Type", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
