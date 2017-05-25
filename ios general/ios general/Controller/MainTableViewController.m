@@ -38,11 +38,12 @@
     }
     
     self.employees = self.currentOrganization.sortedEmployee;
-    NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
     NSLog(@"Sorted array: %@", self.employees);
     
     self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
     [[AppDelegate shared] saveContext];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:@"RandomizeOrderNotificationIdentifier" object:nil];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -65,6 +66,11 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
     NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
+}
+
+- (void)randomizeEmployeeOrder:(NSNotification *) notification
+{
+    [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,6 +130,10 @@
        self.employees = self.currentOrganization.sortedEmployee;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

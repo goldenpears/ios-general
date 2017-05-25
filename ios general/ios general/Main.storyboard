@@ -47,6 +47,9 @@
                                     <constraint firstAttribute="width" constant="288" id="i4H-SF-snH"/>
                                 </constraints>
                                 <state key="normal" title="randomize order"/>
+                                <connections>
+                                    <action selector="randomizeOrderButtonTapped:" destination="n0f-dI-lLd" eventType="touchUpInside" id="tP0-th-5Ng"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qz-69-3s2">
                                 <rect key="frame" x="16" y="315" width="288" height="30"/>
