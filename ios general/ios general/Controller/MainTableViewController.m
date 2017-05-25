@@ -4,6 +4,8 @@
 #import "EmployeeMO+Custom.h"
 #import "OrganizationMO+Custom.h"
 #import "AppDelegate.h"
+#import "ios_general-Swift.h"
+
 
 @interface MainTableViewController () <AddControllerDelegate>
 
@@ -83,6 +85,11 @@
     {
         CreateEmployeeViewController *createController = segue.destinationViewController;
         createController.delegate = self;
+    }
+    if ([segue.identifier isEqualToString:@"showOrganizationInfo"])
+    {
+        OrganizationInfoViewController *infoController = segue.destinationViewController;
+        infoController.currentOrganization = self.currentOrganization;
     }
 }
 

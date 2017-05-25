@@ -26,6 +26,7 @@
 		AE82FA6B1ED46163006EE78F /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */; };
 		AE82FA6E1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82FA6D1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m */; };
 		AEA8A3401ECC46260039ABF6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA8A33F1ECC46260039ABF6 /* CoreData.framework */; };
+		AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */; };
 		CA2DC118BCDEEE9BC51D2CE0 /* libPods-ios general.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BDA413E6DD29E5A1597DDD /* libPods-ios general.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		AE82FA6C1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataProperties.h"; sourceTree = "<group>"; };
 		AE82FA6D1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AEA8A33F1ECC46260039ABF6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEA9BD2F1ED5C9E2007736E6 /* ios general-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios general-Bridging-Header.h"; sourceTree = "<group>"; };
+		AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationInfoViewController.swift; sourceTree = "<group>"; };
 		B1FBE0B8A0739DC8ED72A922 /* libPods-ios generalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios generalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A70D993C7FA80436D4E426 /* Pods-ios generalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios generalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios generalTests/Pods-ios generalTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE07BA3F96FEE696E0194A9D /* Pods-ios generalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios generalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios generalUITests/Pods-ios generalUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 		AE6DBDCC1ECCB4C10035C3CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AEA9BD2F1ED5C9E2007736E6 /* ios general-Bridging-Header.h */,
+				AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */,
 				AE6DBDCD1ECCB4C10035C3CB /* CreateEmployeeViewController.h */,
 				AE6DBDCE1ECCB4C10035C3CB /* CreateEmployeeViewController.m */,
 				AE6DBDCF1ECCB4C10035C3CB /* DetailViewController.h */,
@@ -316,6 +321,7 @@
 				TargetAttributes = {
 					935C62E11EBB4C7800EA6A8A = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					935C62FA1EBB4C7800EA6A8A = {
@@ -523,6 +529,7 @@
 				AE82FA601ED45E98006EE78F /* AppDelegate.m in Sources */,
 				AE82FA611ED45E98006EE78F /* CreateEmployeeViewController.m in Sources */,
 				AE82FA621ED45E98006EE78F /* DetailViewController.m in Sources */,
+				AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */,
 				AE82FA631ED45E98006EE78F /* MainTableViewController.m in Sources */,
 				AE82FA6E1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m in Sources */,
 				AE82FA641ED45E98006EE78F /* EmployeeMO+CoreDataClass.m in Sources */,
@@ -663,10 +670,15 @@
 			baseConfigurationReference = 462758EA647B3254F184CA2E /* Pods-ios general.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "ios general/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "locovna.com.ios-general";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios general/Controller/ios general-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -675,10 +687,14 @@
 			baseConfigurationReference = 4EFFBCA8D58B1E4F9417221B /* Pods-ios general.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "ios general/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "locovna.com.ios-general";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios general/Controller/ios general-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -686,6 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E89CBDE2F748FFF12167BF3 /* Pods-ios generalTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ios generalTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -699,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5A70D993C7FA80436D4E426 /* Pods-ios generalTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "ios generalTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -712,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE07BA3F96FEE696E0194A9D /* Pods-ios generalUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "ios generalUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "locovna.com.ios-generalUITests";
@@ -724,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BD6F8876967B42EA33BD30E /* Pods-ios generalUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "ios generalUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "locovna.com.ios-generalUITests";
