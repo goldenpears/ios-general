@@ -11,7 +11,7 @@ This repo demonstrates base things in iOS, objective-c and swift.
 - [x] Autolayout
 - [x] Basic CoreData
 - [x] CocoaPods
-- [ ] Swift
+- [x] Swift
 - [ ] Notifications
 - [ ] Basic networking
 - [ ] GCD and Math
