@@ -38,7 +38,7 @@
                                 </constraints>
                                 <state key="normal" title="calculate salary sum"/>
                                 <connections>
-                                    <action selector="calculateSlaryButtonTapped:" destination="n0f-dI-lLd" eventType="touchUpInside" id="zbH-uF-aLw"/>
+                                    <action selector="calculateSalaryButtonTapped:" destination="n0f-dI-lLd" eventType="touchUpInside" id="Mog-GJ-Jhv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEb-1h-6Z9">
