@@ -2,11 +2,11 @@
 platform :ios, '9.0'
 
 target 'ios general' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
 
   # Pods for ios general
   pod 'HSDatePickerViewController', '~> 1.0'
+  pod 'Alamofire', '~> 4.4'
 
   target 'ios generalTests' do
     inherit! :search_paths
