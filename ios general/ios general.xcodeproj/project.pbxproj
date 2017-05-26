@@ -17,6 +17,7 @@
 		AE5D77B51ED826E000883F02 /* OrganizationMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77AF1ED826E000883F02 /* OrganizationMO+CoreDataProperties.m */; };
 		AE5D77E21ED8431D00883F02 /* EmployeeMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77DF1ED8431D00883F02 /* EmployeeMO+CoreDataClass.m */; };
 		AE5D77E31ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77E11ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m */; };
+		AE5D77E91ED8856A00883F02 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77E81ED8856A00883F02 /* RequestManager.swift */; };
 		AE82FA601ED45E98006EE78F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62E91EBB4C7800EA6A8A /* AppDelegate.m */; };
 		AE82FA611ED45E98006EE78F /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDCE1ECCB4C10035C3CB /* CreateEmployeeViewController.m */; };
 		AE82FA621ED45E98006EE78F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDD01ECCB4C10035C3CB /* DetailViewController.m */; };
@@ -74,6 +75,7 @@
 		AE5D77DF1ED8431D00883F02 /* EmployeeMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataClass.m"; sourceTree = "<group>"; };
 		AE5D77E01ED8431D00883F02 /* EmployeeMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataProperties.h"; sourceTree = "<group>"; };
 		AE5D77E11ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AE5D77E81ED8856A00883F02 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		AE6DBDBA1ECCB3150035C3CB /* EmployeeMO+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+Custom.h"; sourceTree = "<group>"; };
 		AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+Custom.m"; sourceTree = "<group>"; };
 		AE6DBDBD1ECCB3150035C3CB /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				937055721EC30B470047F4EF /* Main.storyboard */,
 				935C62E81EBB4C7800EA6A8A /* AppDelegate.h */,
 				935C62E91EBB4C7800EA6A8A /* AppDelegate.m */,
+				AE5D77E71ED8855F00883F02 /* Networking */,
 				AE6DBDCC1ECCB4C10035C3CB /* Controller */,
 				AE6DBDB51ECCB3150035C3CB /* CoreData */,
 				935C62E51EBB4C7800EA6A8A /* Supporting Files */,
@@ -184,6 +187,14 @@
 				935C630C1EBB4C7900EA6A8A /* Info.plist */,
 			);
 			path = "ios generalUITests";
+			sourceTree = "<group>";
+		};
+		AE5D77E71ED8855F00883F02 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AE5D77E81ED8856A00883F02 /* RequestManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AE6DBDB51ECCB3150035C3CB /* CoreData */ = {
@@ -536,6 +547,7 @@
 				AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */,
 				AE82FA631ED45E98006EE78F /* MainTableViewController.m in Sources */,
 				AE82FA661ED45E98006EE78F /* EmployeeMO+Custom.m in Sources */,
+				AE5D77E91ED8856A00883F02 /* RequestManager.swift in Sources */,
 				AE82FA691ED45E98006EE78F /* OrganizationMO+Custom.m in Sources */,
 				AE82FA6A1ED45E98006EE78F /* main.m in Sources */,
 			);

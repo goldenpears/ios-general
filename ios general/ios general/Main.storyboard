@@ -57,6 +57,9 @@
                                     <constraint firstAttribute="width" constant="288" id="Vf1-T1-955"/>
                                 </constraints>
                                 <state key="normal" title="fetch organizations"/>
+                                <connections>
+                                    <action selector="fetchOrganizationsButtonTapped:" destination="n0f-dI-lLd" eventType="touchUpInside" id="3uw-2f-IRB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-bi-EHo">
                                 <rect key="frame" x="16" y="365" width="288" height="30"/>

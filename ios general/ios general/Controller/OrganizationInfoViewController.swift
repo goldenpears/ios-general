@@ -42,6 +42,12 @@ class OrganizationInfoViewController: UIViewController
         NotificationCenter.default.post(name: Notification.Name(kEmployeesOrderHasChanged), object: nil)
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    @IBAction func fetchOrganizationsButtonTapped(_ sender: UIButton)
+    {
+        let x: AnyObject = 123 as AnyObject
+        RequestManager.fetchOrganizations(["Lol":x])
+    }
 }
 
 
