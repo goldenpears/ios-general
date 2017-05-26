@@ -21,7 +21,32 @@ class OrganizationInfoViewController: UIViewController
     
     @IBAction func randomizeOrderButtonTapped(_ sender: UIButton)
     {
+        var employees = Array(currentOrganization.employees!)
+        
+        for i in employees.startIndex ..< employees.endIndex - 1
+        {
+            let j = Int(arc4random_uniform(UInt32(employees.endIndex - i))) + i
+            if i != j
+            {
+                swap(&employees[i], &employees[j])
+            }
+        }
+        for e in employees
+        {
+            let x = employees.index(of: e)
+            let index = Int64(Int(x!))
+            e.orderID = index
+            NSLog("OrderID in sortedEmployees: %lld - %@", e.orderID, e)
+        }
+        AppDelegate.shared().saveContext()
         NotificationCenter.default.post(name: Notification.Name(kEmployeesOrderHasChanged), object: nil)
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
+
+
+
+
+
+
+

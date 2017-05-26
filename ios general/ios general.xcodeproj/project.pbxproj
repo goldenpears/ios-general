@@ -13,18 +13,18 @@
 		937055751EC30B470047F4EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937055701EC30B470047F4EF /* Assets.xcassets */; };
 		937055771EC30B470047F4EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937055721EC30B470047F4EF /* Main.storyboard */; };
 		A8F63B9F24CEE13F7ED7410A /* libPods-ios generalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D67F5706877FFF3342472176 /* libPods-ios generalTests.a */; };
+		AE5D77B41ED826E000883F02 /* OrganizationMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77AD1ED826E000883F02 /* OrganizationMO+CoreDataClass.m */; };
+		AE5D77B51ED826E000883F02 /* OrganizationMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77AF1ED826E000883F02 /* OrganizationMO+CoreDataProperties.m */; };
+		AE5D77E21ED8431D00883F02 /* EmployeeMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77DF1ED8431D00883F02 /* EmployeeMO+CoreDataClass.m */; };
+		AE5D77E31ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D77E11ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m */; };
 		AE82FA601ED45E98006EE78F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62E91EBB4C7800EA6A8A /* AppDelegate.m */; };
 		AE82FA611ED45E98006EE78F /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDCE1ECCB4C10035C3CB /* CreateEmployeeViewController.m */; };
 		AE82FA621ED45E98006EE78F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDD01ECCB4C10035C3CB /* DetailViewController.m */; };
 		AE82FA631ED45E98006EE78F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDD21ECCB4C10035C3CB /* MainTableViewController.m */; };
-		AE82FA641ED45E98006EE78F /* EmployeeMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDB71ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m */; };
 		AE82FA661ED45E98006EE78F /* EmployeeMO+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */; };
-		AE82FA671ED45E98006EE78F /* OrganizationMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBF1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m */; };
-		AE82FA681ED45E98006EE78F /* OrganizationMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDC11ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m */; };
 		AE82FA691ED45E98006EE78F /* OrganizationMO+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDC31ECCB3150035C3CB /* OrganizationMO+Custom.m */; };
 		AE82FA6A1ED45E98006EE78F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 935C62E61EBB4C7800EA6A8A /* main.m */; };
 		AE82FA6B1ED46163006EE78F /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */; };
-		AE82FA6E1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82FA6D1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m */; };
 		AEA8A3401ECC46260039ABF6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA8A33F1ECC46260039ABF6 /* CoreData.framework */; };
 		AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */; };
 		CA2DC118BCDEEE9BC51D2CE0 /* libPods-ios general.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BDA413E6DD29E5A1597DDD /* libPods-ios general.a */; };
@@ -66,15 +66,17 @@
 		935C630C1EBB4C7900EA6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		937055701EC30B470047F4EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		937055721EC30B470047F4EF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AE6DBDB61ECCB3150035C3CB /* EmployeeMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataClass.h"; sourceTree = "<group>"; };
-		AE6DBDB71ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		AE5D77AC1ED826E000883F02 /* OrganizationMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganizationMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		AE5D77AD1ED826E000883F02 /* OrganizationMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrganizationMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		AE5D77AE1ED826E000883F02 /* OrganizationMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganizationMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AE5D77AF1ED826E000883F02 /* OrganizationMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrganizationMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AE5D77DE1ED8431D00883F02 /* EmployeeMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		AE5D77DF1ED8431D00883F02 /* EmployeeMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		AE5D77E01ED8431D00883F02 /* EmployeeMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AE5D77E11ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AE6DBDBA1ECCB3150035C3CB /* EmployeeMO+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+Custom.h"; sourceTree = "<group>"; };
 		AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+Custom.m"; sourceTree = "<group>"; };
 		AE6DBDBD1ECCB3150035C3CB /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
-		AE6DBDBE1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganizationMO+CoreDataClass.h"; sourceTree = "<group>"; };
-		AE6DBDBF1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrganizationMO+CoreDataClass.m"; sourceTree = "<group>"; };
-		AE6DBDC01ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganizationMO+CoreDataProperties.h"; sourceTree = "<group>"; };
-		AE6DBDC11ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrganizationMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AE6DBDC21ECCB3150035C3CB /* OrganizationMO+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganizationMO+Custom.h"; sourceTree = "<group>"; };
 		AE6DBDC31ECCB3150035C3CB /* OrganizationMO+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrganizationMO+Custom.m"; sourceTree = "<group>"; };
 		AE6DBDCD1ECCB4C10035C3CB /* CreateEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEmployeeViewController.h; sourceTree = "<group>"; };
@@ -83,8 +85,6 @@
 		AE6DBDD01ECCB4C10035C3CB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		AE6DBDD11ECCB4C10035C3CB /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		AE6DBDD21ECCB4C10035C3CB /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
-		AE82FA6C1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataProperties.h"; sourceTree = "<group>"; };
-		AE82FA6D1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AEA8A33F1ECC46260039ABF6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AEA9BD2F1ED5C9E2007736E6 /* ios general-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios general-Bridging-Header.h"; sourceTree = "<group>"; };
 		AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationInfoViewController.swift; sourceTree = "<group>"; };
@@ -190,16 +190,16 @@
 			isa = PBXGroup;
 			children = (
 				AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */,
-				AE82FA6C1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.h */,
-				AE82FA6D1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m */,
-				AE6DBDB61ECCB3150035C3CB /* EmployeeMO+CoreDataClass.h */,
-				AE6DBDB71ECCB3150035C3CB /* EmployeeMO+CoreDataClass.m */,
+				AE5D77DE1ED8431D00883F02 /* EmployeeMO+CoreDataClass.h */,
+				AE5D77DF1ED8431D00883F02 /* EmployeeMO+CoreDataClass.m */,
+				AE5D77E01ED8431D00883F02 /* EmployeeMO+CoreDataProperties.h */,
+				AE5D77E11ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m */,
+				AE5D77AC1ED826E000883F02 /* OrganizationMO+CoreDataClass.h */,
+				AE5D77AD1ED826E000883F02 /* OrganizationMO+CoreDataClass.m */,
+				AE5D77AE1ED826E000883F02 /* OrganizationMO+CoreDataProperties.h */,
+				AE5D77AF1ED826E000883F02 /* OrganizationMO+CoreDataProperties.m */,
 				AE6DBDBA1ECCB3150035C3CB /* EmployeeMO+Custom.h */,
 				AE6DBDBB1ECCB3150035C3CB /* EmployeeMO+Custom.m */,
-				AE6DBDBE1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.h */,
-				AE6DBDBF1ECCB3150035C3CB /* OrganizationMO+CoreDataClass.m */,
-				AE6DBDC01ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.h */,
-				AE6DBDC11ECCB3150035C3CB /* OrganizationMO+CoreDataProperties.m */,
 				AE6DBDC21ECCB3150035C3CB /* OrganizationMO+Custom.h */,
 				AE6DBDC31ECCB3150035C3CB /* OrganizationMO+Custom.m */,
 			);
@@ -526,16 +526,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE82FA6B1ED46163006EE78F /* model.xcdatamodeld in Sources */,
+				AE5D77B51ED826E000883F02 /* OrganizationMO+CoreDataProperties.m in Sources */,
+				AE5D77E31ED8431D00883F02 /* EmployeeMO+CoreDataProperties.m in Sources */,
 				AE82FA601ED45E98006EE78F /* AppDelegate.m in Sources */,
+				AE5D77B41ED826E000883F02 /* OrganizationMO+CoreDataClass.m in Sources */,
 				AE82FA611ED45E98006EE78F /* CreateEmployeeViewController.m in Sources */,
+				AE5D77E21ED8431D00883F02 /* EmployeeMO+CoreDataClass.m in Sources */,
 				AE82FA621ED45E98006EE78F /* DetailViewController.m in Sources */,
 				AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */,
 				AE82FA631ED45E98006EE78F /* MainTableViewController.m in Sources */,
-				AE82FA6E1ED461F5006EE78F /* EmployeeMO+CoreDataProperties.m in Sources */,
-				AE82FA641ED45E98006EE78F /* EmployeeMO+CoreDataClass.m in Sources */,
 				AE82FA661ED45E98006EE78F /* EmployeeMO+Custom.m in Sources */,
-				AE82FA671ED45E98006EE78F /* OrganizationMO+CoreDataClass.m in Sources */,
-				AE82FA681ED45E98006EE78F /* OrganizationMO+CoreDataProperties.m in Sources */,
 				AE82FA691ED45E98006EE78F /* OrganizationMO+Custom.m in Sources */,
 				AE82FA6A1ED45E98006EE78F /* main.m in Sources */,
 			);

@@ -1,9 +1,9 @@
 //
 //  OrganizationMO+CoreDataProperties.h
-//  ios general
+//  
 //
-//  Created by lokovna on 5/17/17.
-//  Copyright © 2017 Darina Locovna. All rights reserved.
+//  Created by lokovna on 5/26/17.
+//
 //
 
 #import "OrganizationMO+CoreDataClass.h"
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<OrganizationMO *> *)fetchRequest;
 
-@property (nullable, nonatomic, retain) NSObject *name;
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, retain) NSSet<EmployeeMO *> *employees;
 
 @end

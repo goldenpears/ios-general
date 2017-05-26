@@ -24,7 +24,9 @@
         newEmployee.salary = self.salaryField.text.intValue;
         newEmployee.dateOfBirth = self.selectedDate;
         NSLog(@"New Employee: %@", newEmployee);
-        
+        NSLog(@"New Employee ID: %lld", newEmployee.orderID);
+    
+    
         [[AppDelegate shared] saveContext];
         [self.delegate addNewEmployee:newEmployee];
         [self.navigationController popToRootViewControllerAnimated:YES];

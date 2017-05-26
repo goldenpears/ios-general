@@ -2,7 +2,7 @@
 //  EmployeeMO+CoreDataProperties.m
 //  
 //
-//  Created by lokovna on 5/23/17.
+//  Created by lokovna on 5/26/17.
 //
 //
 
@@ -17,6 +17,7 @@
 @dynamic dateOfBirth;
 @dynamic firstName;
 @dynamic lastName;
+@dynamic orderID;
 @dynamic salary;
 @dynamic organization;
 

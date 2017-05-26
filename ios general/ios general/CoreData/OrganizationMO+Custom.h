@@ -5,8 +5,9 @@
 
 @interface OrganizationMO (Custom)
 
-@property (nonatomic, readonly) NSArray<EmployeeMO *> *sortedEmployee;
+@property (nonatomic, readonly) NSArray<EmployeeMO *> *sortedEmployees;
 
+- (void)addEmployeeWithOrderId:(EmployeeMO *)employee;
 - (int)calculateAverageSalary;
 - (EmployeeMO *)employeeWithLowestSalary;
 - (NSArray<EmployeeMO *> *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
