@@ -1,9 +1,9 @@
 //
 //  EmployeeMO+CoreDataClass.h
-//  ios general
+//  
 //
-//  Created by lokovna on 5/17/17.
-//  Copyright © 2017 Darina Locovna. All rights reserved.
+//  Created by lokovna on 5/26/17.
+//
 //
 
 #import <Foundation/Foundation.h>

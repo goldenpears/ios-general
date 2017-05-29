@@ -20,7 +20,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    self.organizationController = [OrganizationInfoViewController new];
     // Check if Organization exist
     NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
     NSError *error = nil;
@@ -36,13 +38,11 @@
     {
         self.currentOrganization = results.firstObject;
     }
-    
-    self.employees = self.currentOrganization.sortedEmployee;
-    NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
-    NSLog(@"Sorted array: %@", self.employees);
-    
+    [self updateEmployeeList];
     self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
     [[AppDelegate shared] saveContext];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:OrganizationInfoViewController.kEmployeesOrderHasChanged object:nil];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -54,17 +54,23 @@
 
 - (void)addNewEmployee:(EmployeeMO *)employee
 {
-    [self.currentOrganization addEmployeesObject:employee];
+    NSLog(@"New employee OrderID: %lld - %@", employee.orderID, employee);
+    [self.currentOrganization addEmployeeWithOrderId:employee];
     [[AppDelegate shared] saveContext];
     
-    self.employees = self.currentOrganization.sortedEmployee;
+    self.employees = self.currentOrganization.sortedEmployees;
     NSLog(@"Sorted array after additon: %@", self.employees);
     
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.employees indexOfObjectIdenticalTo:employee] inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
-    NSLog(@"Low: %@",[self.currentOrganization employeeWithLowestSalary]);
+}
+
+- (void)randomizeEmployeeOrder:(NSNotification *) notification
+{
+    [self updateEmployeeList];
+    [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,7 +108,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     EmployeeMO *currentEmployee = [self.employees objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",currentEmployee.firstName, currentEmployee.lastName];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",currentEmployee];
     
     return cell;
 }
@@ -121,9 +127,20 @@
         NSLog(@"Set after delete: %@", self.currentOrganization.employees);
         [[AppDelegate shared] saveContext];
         
-       self.employees = self.currentOrganization.sortedEmployee;
+        self.employees = self.currentOrganization.sortedEmployees;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+}
+
+- (void) updateEmployeeList
+{
+    self.employees = self.currentOrganization.sortedEmployees;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:OrganizationInfoViewController.kEmployeesOrderHasChanged
+ object:nil];
 }
 
 @end

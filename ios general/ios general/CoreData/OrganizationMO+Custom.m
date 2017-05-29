@@ -4,6 +4,16 @@
 
 @implementation OrganizationMO (Custom)
 
+- (void)addEmployeeWithOrderId:(EmployeeMO *)employee
+{
+    [self addEmployeesObject:employee];
+    int max = [[self.employees valueForKeyPath:@"@max.orderID"] intValue];
+    employee.orderID = max + 1;
+
+    NSLog(@"Max ID: %d", max);
+    NSLog(@"New Employee via 'addEmployeeWithOrderId': %lld - %@", employee.orderID, employee);
+}
+
 - (int)calculateAverageSalary
 {
     NSNumber *salary = [self.employees valueForKeyPath:@"@avg.salary"];
@@ -41,11 +51,13 @@
     return employees;
 }
 
-- (NSArray<EmployeeMO *> *)sortedEmployee
+- (NSArray<EmployeeMO *> *)sortedEmployees
 {
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"orderID" ascending:YES];
     NSArray *sortDescriptors = @[descriptor];
     NSArray<EmployeeMO *> *sortedArray = [self.employees sortedArrayUsingDescriptors:sortDescriptors];
+    
+    NSLog(@"Sorted Array: %@", sortedArray);
     return sortedArray;
 }
 
