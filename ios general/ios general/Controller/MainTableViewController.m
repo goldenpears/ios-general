@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    self.organizationController = [OrganizationInfoViewController new];
     // Check if Organization exist
     NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
     NSError *error = nil;
@@ -40,8 +41,8 @@
     [self updateEmployeeList];
     self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
     [[AppDelegate shared] saveContext];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:@"RandomizeOrderNotificationIdentifier" object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:OrganizationInfoViewController.kEmployeesOrderHasChanged object:nil];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -126,7 +127,7 @@
         NSLog(@"Set after delete: %@", self.currentOrganization.employees);
         [[AppDelegate shared] saveContext];
         
-       self.employees = self.currentOrganization.sortedEmployees;
+        self.employees = self.currentOrganization.sortedEmployees;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
@@ -138,7 +139,8 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RandomizeOrderNotificationIdentifier" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:OrganizationInfoViewController.kEmployeesOrderHasChanged
+ object:nil];
 }
 
 @end
