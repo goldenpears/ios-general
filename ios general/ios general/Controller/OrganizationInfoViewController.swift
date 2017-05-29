@@ -4,7 +4,7 @@ import UIKit
 class OrganizationInfoViewController: UIViewController
 {
     public var currentOrganization: OrganizationMO!
-    public let kEmployeesOrderHasChanged: String = "RandomizeOrderNotificationIdentifier"
+    public static let kEmployeesOrderHasChanged: String = "RandomizeOrderNotificationIdentifier"
     
     override func viewDidLoad()
     {
@@ -41,7 +41,7 @@ class OrganizationInfoViewController: UIViewController
         }
         AppDelegate.shared().saveContext()
         
-        NotificationCenter.default.post(name: Notification.Name(kEmployeesOrderHasChanged), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(OrganizationInfoViewController.kEmployeesOrderHasChanged), object: nil)
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

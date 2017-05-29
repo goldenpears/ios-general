@@ -12,7 +12,6 @@
 @property (nonatomic, strong) NSArray<EmployeeMO *> *employees;
 @property (nonatomic, weak) EmployeeMO *selectedEmployee;
 @property (nonatomic, strong) OrganizationMO *currentOrganization;
-@property (nonatomic, strong) OrganizationInfoViewController *organizationController;
 
 @end
 
@@ -43,7 +42,7 @@
     self.title = [NSString stringWithFormat:@"%@", self.currentOrganization.name];
     [[AppDelegate shared] saveContext];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:self.organizationController.kEmployeesOrderHasChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(randomizeEmployeeOrder:) name:OrganizationInfoViewController.kEmployeesOrderHasChanged object:nil];
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
@@ -140,7 +139,7 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:self.organizationController.kEmployeesOrderHasChanged
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:OrganizationInfoViewController.kEmployeesOrderHasChanged
  object:nil];
 }
 
