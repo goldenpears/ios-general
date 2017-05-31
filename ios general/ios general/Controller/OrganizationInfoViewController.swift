@@ -47,8 +47,35 @@ class OrganizationInfoViewController: UIViewController
     
     @IBAction func fetchOrganizationsButtonTapped(_ sender: UIButton)
     {
-        let x: AnyObject = 123 as AnyObject
-        RequestManager.fetchOrganizations(["Lol":x])
+        var organizations = [OrganizationMO]()
+        RequestManager.fetchOrganizations(data: {data in
+            if let orgs = data["organizations"] as? [Any]
+            {
+                if let array = orgs as? [Any]
+                {
+                    for org in array
+                    {
+                        if let organization = org as? [String: Any]
+                        {
+                            let o = OrganizationMO()
+                            organizations.append(o.createOrganization(from: organization))
+                        }
+                    }
+                    // TODO: notificate alert to show after data is loaded
+                    let alert = UIAlertController(title: "Fetched Organizations", message: "Please choose one", preferredStyle: .actionSheet)
+                    
+                    for org in organizations
+                    {
+                        alert.addAction(UIAlertAction(title: org.name, style: .default) { action in
+                            NSLog("Tapped: \(org)")
+                            self.navigationController?.popToRootViewController(animated: true)
+                        })
+                    }
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        })
     }
 }
 

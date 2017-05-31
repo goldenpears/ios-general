@@ -22,7 +22,6 @@
     [super viewDidLoad];
     
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
-    self.organizationController = [OrganizationInfoViewController new];
     // Check if Organization exist
     NSManagedObjectContext *context = [AppDelegate shared].managedObjectContext;
     NSError *error = nil;
