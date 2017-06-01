@@ -68,7 +68,7 @@
     org.name = [dictionary objectForKey:@"name"];
     for (NSDictionary *rawEmployee in dictionary[@"employees"])
     {
-    [org addEmployeesObject:[EmployeeMO createEmployeeFromDictionary:rawEmployee]];
+        [org addEmployeesObject:[EmployeeMO createEmployeeFromDictionary:rawEmployee]];
     }
     NSLog(@"\nName of the Organization: %@ \n \t Employees here: \n \t %@", org.name, org.employees);
     return org;
