@@ -12,8 +12,8 @@ class RequestManager: NSObject
             print(response.result)
             if let JSON = response.result.value
             {
-                let dictionary = JSON as? [String: AnyObject]
-                data(dictionary!)
+                let dictionary = JSON as! [String: AnyObject]
+                data(dictionary)
             }
         }
     }

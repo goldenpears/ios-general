@@ -9,11 +9,11 @@
     employee.firstName = rawEmployee[@"first_name"];
     employee.lastName = rawEmployee[@"last_name"];
     if ([rawEmployee[@"salary"] isKindOfClass:[NSNull class]])
-        {
+    {
         employee.salary = 0;
-        }
+    }
     else
-        {
+    {
         employee.salary = [rawEmployee[@"salary"] intValue];
     }
     employee.orderID = [rawEmployee[@"order"] intValue];

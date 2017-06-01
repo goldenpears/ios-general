@@ -8,7 +8,7 @@ import UIKit
 
 class OrganizationInfoViewController: UIViewController
 {
-    var delegate:OrganizationInfoViewControllerProtocol?
+    weak var delegate: OrganizationInfoViewControllerProtocol?
     public var currentOrganization: OrganizationMO!
     public static let kEmployeesOrderHasChanged: String = "RandomizeOrderNotificationIdentifier"
     

@@ -6,7 +6,7 @@ target 'ios general' do
 
   # Pods for ios general
   pod 'HSDatePickerViewController', '~> 1.0'
-  pod 'Alamofire', '~> 4.4'
+  pod 'Alamofire'
 
   target 'ios generalTests' do
     inherit! :search_paths
