@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'ios general' do
+   use_frameworks!
+
+  # Pods for ios general
+  pod 'HSDatePickerViewController', '~> 1.0'
+  pod 'Alamofire'
+  pod 'SVProgressHUD'
+  
+  target 'ios generalTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ios generalUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

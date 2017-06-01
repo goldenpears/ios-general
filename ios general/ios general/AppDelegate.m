@@ -1,78 +1,121 @@
-//
-//  AppDelegate.m
-//  ios general
-//
-//  Created by Darina Lokovna on 5/4/17.
-//  Copyright © 2017 Darina Locovna. All rights reserved.
-//
-
 #import "AppDelegate.h"
-#import "Employee.h"
-#import "Organization.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *)shared
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    Employee *employee1 = [[Employee alloc] initWithFirstName:@"Genady" lastName:@"Adolfovich" salary:100];
-    Employee *employee2 = [[Employee alloc] initWithFirstName:@"Arnold" lastName:@"Hey" salary:7600];
-    
-    Organization *org = [[Organization alloc] initWithName:@"NextStep"];
-    
-    [org addEmployeeWithName:@"Someone Anyone"];
-    [org addEmployeeWithName:@"NameWith Space"];
-    [org addEmployeeWithName:@"NameWith1 Two Spaces"];
-    [org addEmployeeWithName:@"NameWitoutSpace"];
-    
-    [org addEmployee:employee1];
-    [org addEmployee:employee2];
-    [org addEmployee:[[Employee alloc] initWithFirstName:@"Beda" lastName:@"Marfa" salary:400]];
-    
-    [org calculateAverageSalary];
-    [org employeeWithLowestSalary];
-    [org employeesWithSalary:100 tolerance:50];
-    
-    //    [org removeEmployee:employee];
-    //    [org removeEmployee:[[Employee alloc]initWithFirstName: @"No" lastName: @"One" salary: 0]];
-    
     return YES;
+    
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application
+- (NSURL *)applicationDocumentsDirectory
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    NSURL *appSupportURL = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    return [appSupportURL URLByAppendingPathComponent:@"locovna.com.ios-general"];
 }
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
+- (NSManagedObjectModel *)managedObjectModel
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel)
+    {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"model" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
 }
 
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
+    if (_persistentStoreCoordinator)
+    {
+        return _persistentStoreCoordinator;
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *applicationDocumentsDirectory = [self applicationDocumentsDirectory];
+    BOOL shouldFail = NO;
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    
+    // Make sure the application files directory is there
+    NSDictionary *properties = [applicationDocumentsDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
+    if (properties)
+    {
+        if (![properties[NSURLIsDirectoryKey] boolValue])
+        {
+            failureReason = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationDocumentsDirectory path]];
+            shouldFail = YES;
+        }
+    } else if ([error code] == NSFileReadNoSuchFileError)
+    {
+        error = nil;
+        [fileManager createDirectoryAtPath:[applicationDocumentsDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+    }
+    
+    if (!shouldFail && !error)
+    {
+        NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@"OSXCoreDataObjC.sqlite"];
+        if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error])
+        {
+            coordinator = nil;
+        }
+        _persistentStoreCoordinator = coordinator;
+    }
+    
+    if (shouldFail || error)
+    {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        if (error)
+        {
+            dict[NSUnderlyingErrorKey] = error;
+        }
+        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+    }
+    return _persistentStoreCoordinator;
 }
 
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
+- (NSManagedObjectContext *)managedObjectContext
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext)
+    {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator)
+    {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    
+    return _managedObjectContext;
 }
 
-
-- (void)applicationWillTerminate:(UIApplication *)application
+- (void)saveContext
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSError *error = nil;
+    if ([[self managedObjectContext] save:&error] == NO)
+    {
+        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
 }
-
 
 @end
+ 
