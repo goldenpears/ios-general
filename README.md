@@ -13,5 +13,5 @@ This repo demonstrates base things in iOS, objective-c and swift.
 - [x] CocoaPods
 - [x] Swift
 - [x] Notifications
-- [ ] Basic networking
+- [x] Basic networking
 - [ ] GCD and Math
