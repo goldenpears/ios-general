@@ -1,8 +1,14 @@
 import Foundation
 import UIKit
 
+@objc public protocol OrganizationInfoViewControllerProtocol
+{
+    func setSelectedOrganization(organization: OrganizationMO)
+}
+
 class OrganizationInfoViewController: UIViewController
 {
+    weak var delegate: OrganizationInfoViewControllerProtocol?
     public var currentOrganization: OrganizationMO!
     public static let kEmployeesOrderHasChanged: String = "RandomizeOrderNotificationIdentifier"
     
@@ -43,6 +49,40 @@ class OrganizationInfoViewController: UIViewController
         
         NotificationCenter.default.post(name: Notification.Name(OrganizationInfoViewController.kEmployeesOrderHasChanged), object: nil)
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func fetchOrganizationsButtonTapped(_ sender: UIButton)
+    {
+        var organizations = [OrganizationMO]()
+        RequestManager.fetchOrganizations(data: { [weak self] data in
+            if let rawOrganizations = data["organizations"] as? [Any]
+            {
+                if let rawOrganizationsAsArray = rawOrganizations as? [Any]
+                {
+                    for org in rawOrganizationsAsArray
+                    {
+                        if let organization = org as? [String: Any]
+                        {
+                            organizations.append(OrganizationMO.createOrganization(from: organization))
+                            AppDelegate.shared().saveContext()
+                        }
+                    }
+                    // TODO: notificate alert to show after data is loaded
+                    let alert = UIAlertController(title: "Fetched Organizations", message: "Please choose one", preferredStyle: .actionSheet)
+                    
+                    for org in organizations
+                    {
+                        alert.addAction(UIAlertAction(title: org.name, style: .default) { action in
+                            NSLog("Tapped: \(org)")
+                            self?.delegate?.setSelectedOrganization(organization: org)
+                            self?.navigationController?.popToRootViewController(animated: true)
+                        })
+                    }
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+                    self?.present(alert, animated: true)
+                }
+            }
+        })
     }
 }
 

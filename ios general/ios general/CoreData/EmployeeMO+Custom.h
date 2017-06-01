@@ -3,4 +3,6 @@
 
 @interface EmployeeMO (Custom)
 
++ (EmployeeMO *)createEmployeeFromDictionary:(NSDictionary *)rawEmployee;
+
 @end

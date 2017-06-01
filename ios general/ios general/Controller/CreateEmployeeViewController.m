@@ -26,7 +26,6 @@
         NSLog(@"New Employee: %@", newEmployee);
         NSLog(@"New Employee ID: %lld", newEmployee.orderID);
     
-    
         [[AppDelegate shared] saveContext];
         [self.delegate addNewEmployee:newEmployee];
         [self.navigationController popToRootViewControllerAnimated:YES];
@@ -54,7 +53,8 @@
     }
 }
 
-- (IBAction)setDateButtonTapped:(UIButton *)sender {
+- (IBAction)setDateButtonTapped:(UIButton *)sender
+{
     HSDatePickerViewController *hsdpvc = [[HSDatePickerViewController alloc] init];
     hsdpvc.delegate = self;
     if (self.selectedDate) {
@@ -63,7 +63,8 @@
     [self presentViewController:hsdpvc animated:YES completion:nil];
 }
 
-- (void)hsDatePickerPickedDate:(NSDate *)date {
+- (void)hsDatePickerPickedDate:(NSDate *)date
+{
     NSLog(@"Date picked %@", date);
     NSDateFormatter *dateFormater = [NSDateFormatter new];
     dateFormater.dateFormat = @"yyyy.MM.dd";

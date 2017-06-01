@@ -61,6 +61,19 @@
     return sortedArray;
 }
 
++ (OrganizationMO *)createOrganizationFromDictionary:(NSDictionary *)dictionary
+{
+    OrganizationMO *org = [NSEntityDescription insertNewObjectForEntityForName:@"Organization" inManagedObjectContext:[AppDelegate shared].managedObjectContext];
+    
+    org.name = [dictionary objectForKey:@"name"];
+    for (NSDictionary *rawEmployee in dictionary[@"employees"])
+    {
+        [org addEmployeesObject:[EmployeeMO createEmployeeFromDictionary:rawEmployee]];
+    }
+    NSLog(@"\nName of the Organization: %@ \n \t Employees here: \n \t %@", org.name, org.employees);
+    return org;
+}
+
 -  (NSString *)description
 {
     return [NSString stringWithFormat:@"%@", self.name];
