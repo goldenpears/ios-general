@@ -11,6 +11,6 @@
 - (int)calculateAverageSalary;
 - (EmployeeMO *)employeeWithLowestSalary;
 - (NSArray<EmployeeMO *> *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
-- (OrganizationMO *)createOrganizationFromDictionary:(NSDictionary *)dictionary;
++ (OrganizationMO *)createOrganizationFromDictionary:(NSDictionary *)dictionary;
 
 @end

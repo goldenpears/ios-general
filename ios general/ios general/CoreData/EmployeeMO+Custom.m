@@ -1,18 +1,25 @@
 #import "EmployeeMO+Custom.h"
+#import "AppDelegate.h"
 
 @implementation EmployeeMO (Custom)
 
-+ (NSSet<EmployeeMO *> *)creatEmployeesFromArray:(NSArray *)employeesArray
++ (EmployeeMO *)createEmployeeFromDictionary:(NSDictionary *)rawEmployee
 {
-    NSSet<EmployeeMO *> *employees = [NSSet<EmployeeMO *> new];
-    for(NSDictionary *dic in employeesArray)
+    EmployeeMO *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:[AppDelegate shared].managedObjectContext];
+    employee.firstName = rawEmployee[@"first_name"];
+    employee.lastName = rawEmployee[@"last_name"];
+    if ([rawEmployee[@"salary"] isKindOfClass:[NSNull class]])
         {
-        if([dic objectForKey:@"first_name"] && [dic objectForKey:@"last_name"] )
-        {
-        NSLog(@"FIRST AND LAST NAME: %@ %@", [dic objectForKey:@"first_name"], [dic objectForKey:@"last_name"]);
+        employee.salary = 0;
         }
+    else
+        {
+        employee.salary = [rawEmployee[@"salary"] intValue];
     }
-    return employees;
+    employee.orderID = [rawEmployee[@"order"] intValue];
+
+    NSLog(@"New Employee from Dictionary: %@", employee);
+    return employee;
 }
 
 - (NSString *)description

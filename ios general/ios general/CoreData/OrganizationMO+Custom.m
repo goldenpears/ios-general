@@ -61,17 +61,16 @@
     return sortedArray;
 }
 
-- (OrganizationMO *)createOrganizationFromDictionary:(NSDictionary *)dictionary
++ (OrganizationMO *)createOrganizationFromDictionary:(NSDictionary *)dictionary
 {
     OrganizationMO *org = [NSEntityDescription insertNewObjectForEntityForName:@"Organization" inManagedObjectContext:[AppDelegate shared].managedObjectContext];
     
-    if ([dictionary objectForKey:@"name"] && [dictionary objectForKey:@"employees"])
-        {
-        NSLog(@"Name from Organization: %@", [dictionary objectForKey:@"name"]);
-        org.name = [dictionary objectForKey:@"name"];
-        org.employees = [EmployeeMO creatEmployeesFromArray:[dictionary objectForKey:@"employees"]];
-        }
-    [[AppDelegate shared] saveContext];
+    org.name = [dictionary objectForKey:@"name"];
+    for (NSDictionary *rawEmployee in dictionary[@"employees"])
+    {
+    [org addEmployeesObject:[EmployeeMO createEmployeeFromDictionary:rawEmployee]];
+    }
+    NSLog(@"\nName of the Organization: %@ \n \t Employees here: \n \t %@", org.name, org.employees);
     return org;
 }
 

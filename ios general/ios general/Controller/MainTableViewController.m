@@ -7,7 +7,7 @@
 #import "ios_general-Swift.h"
 
 
-@interface MainTableViewController () <AddControllerDelegate>
+@interface MainTableViewController () <AddControllerDelegate, OrganizationInfoViewControllerProtocol>
 
 @property (nonatomic, strong) NSArray<EmployeeMO *> *employees;
 @property (nonatomic, weak) EmployeeMO *selectedEmployee;
@@ -66,10 +66,18 @@
     [self.tableView endUpdates];
 }
 
-- (void)randomizeEmployeeOrder:(NSNotification *) notification
+- (void)randomizeEmployeeOrder:(NSNotification *)notification
 {
     [self updateEmployeeList];
     [self.tableView reloadData];
+}
+
+- (void)setSelectedOrganizationWithOrganization:(OrganizationMO *)organization
+{
+    self.currentOrganization = organization;
+    [self updateEmployeeList];
+    [self.tableView reloadData];
+    NSLog(@"\nGet some organization: %@",organization);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,6 +103,7 @@
     {
         OrganizationInfoViewController *infoController = segue.destinationViewController;
         infoController.currentOrganization = self.currentOrganization;
+        infoController.delegate = self;
     }
 }
 

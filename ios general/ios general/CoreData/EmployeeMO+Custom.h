@@ -3,6 +3,6 @@
 
 @interface EmployeeMO (Custom)
 
-+ (NSSet<EmployeeMO *> *)creatEmployeesFromArray:(NSArray *)employeesArray;
++ (EmployeeMO *)createEmployeeFromDictionary:(NSDictionary *)rawEmployee;
 
 @end
