@@ -67,6 +67,9 @@
                                     <constraint firstAttribute="width" constant="288" id="iUQ-rE-FDN"/>
                                 </constraints>
                                 <state key="normal" title="CALCULATE 10000TH PRIME NUMBER!!"/>
+                                <connections>
+                                    <action selector="calculatePrimeNumberButtonTapped:" destination="n0f-dI-lLd" eventType="touchUpInside" id="oxV-Vq-QgV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

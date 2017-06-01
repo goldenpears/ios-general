@@ -28,6 +28,7 @@
 		AE82FA6B1ED46163006EE78F /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE6DBDBC1ECCB3150035C3CB /* model.xcdatamodeld */; };
 		AEA8A3401ECC46260039ABF6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA8A33F1ECC46260039ABF6 /* CoreData.framework */; };
 		AEA9BD311ED5C9E3007736E6 /* OrganizationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */; };
+		AEF5AE801EE0230300E3E0FA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AEF5AE7F1EE0230300E3E0FA /* SVProgressHUD.bundle */; };
 		BCD4ADC25F8E4BA79D616458 /* Pods_ios_generalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778EBE82C6FB4524B9AD2A74 /* Pods_ios_generalUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		AEA8A33F1ECC46260039ABF6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AEA9BD2F1ED5C9E2007736E6 /* ios general-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios general-Bridging-Header.h"; sourceTree = "<group>"; };
 		AEA9BD301ED5C9E3007736E6 /* OrganizationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationInfoViewController.swift; sourceTree = "<group>"; };
+		AEF5AE7F1EE0230300E3E0FA /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		B5A70D993C7FA80436D4E426 /* Pods-ios generalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios generalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios generalTests/Pods-ios generalTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE07BA3F96FEE696E0194A9D /* Pods-ios generalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios generalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios generalUITests/Pods-ios generalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2366B7138AC053486C05C64 /* Pods_ios_generalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_generalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 		935C62D91EBB4C7800EA6A8A = {
 			isa = PBXGroup;
 			children = (
+				AEF5AE7F1EE0230300E3E0FA /* SVProgressHUD.bundle */,
 				935C62E41EBB4C7800EA6A8A /* ios general */,
 				935C62FE1EBB4C7800EA6A8A /* ios generalTests */,
 				935C63091EBB4C7900EA6A8A /* ios generalUITests */,
@@ -372,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF5AE801EE0230300E3E0FA /* SVProgressHUD.bundle in Resources */,
 				937055771EC30B470047F4EF /* Main.storyboard in Resources */,
 				937055751EC30B470047F4EF /* Assets.xcassets in Resources */,
 			);

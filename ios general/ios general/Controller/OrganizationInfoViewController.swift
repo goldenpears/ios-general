@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SVProgressHUD
 
 @objc public protocol OrganizationInfoViewControllerProtocol
 {
@@ -83,6 +84,65 @@ class OrganizationInfoViewController: UIViewController
                 }
             }
         })
+    }
+    
+    @IBAction func calculatePrimeNumberButtonTapped(_ sender: Any)
+    {
+        func calculatePrimeNumber() -> Int
+        {
+            var primeNumbers = [2]
+            var iterator = 1
+            while primeNumbers.count < 9999 // 10000th prime number
+            {
+                if isPrime(number: primeNumbers.last! + iterator)
+                {
+                    primeNumbers.append(primeNumbers.last! + iterator)
+                    iterator = 1
+                }
+                else
+                {
+                    iterator += 1
+                }
+            }
+            print("All: \(primeNumbers)")
+            print("last prime: \(primeNumbers.last ?? 0)")
+            return primeNumbers.last!
+        }
+        
+        func isPrime(number: Int) -> Bool
+        {
+            if (number % 10) == 0 {return false} // 0: last digit 0
+            if (number % 10) % 2 == 0 {return false} // 2: last digit divided by 2
+            if (number % 10) == 5 {return false} // 5: last digit 5
+            
+            for i in 2..<number-1
+            {
+                if number % i == 0
+                {
+                    print("false: \(number)")
+                    return false
+                }
+            }
+            print("\t is true: \(number)")
+            return true
+        }
+        
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async
+        {
+            let methodStart = Date()
+            let result = calculatePrimeNumber()
+            let methodFinish = Date()
+            let executionTime = methodFinish.timeIntervalSince(methodStart)
+            print("Execution time: \(executionTime)")
+            DispatchQueue.main.async
+            {
+                SVProgressHUD.dismiss()
+                let alert = UIAlertController(title: "Success!", message: "10000th prime number is \(result)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
 }
 
