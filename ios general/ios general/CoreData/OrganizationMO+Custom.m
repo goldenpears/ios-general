@@ -65,7 +65,7 @@
 {
     OrganizationMO *org = [NSEntityDescription insertNewObjectForEntityForName:@"Organization" inManagedObjectContext:[AppDelegate shared].managedObjectContext];
     
-    org.name = [dictionary objectForKey: @"name"];
+    org.name = [dictionary objectForKey:@"name"];
     for (NSDictionary *rawEmployee in dictionary[@"employees"])
     {
         [org addEmployeesObject:[EmployeeMO createEmployeeFromDictionary:rawEmployee]];
