@@ -90,19 +90,16 @@ class OrganizationInfoViewController: UIViewController
     {
         func calculatePrimeNumber() -> Int
         {
-            var primeNumbers = [2]
-            var iterator = 1
+            var primeNumbers = [2, 3]
+            primeNumbers.reserveCapacity(10000)
+            var iterator = 5
             while primeNumbers.count < 9999 // 10000th prime number
             {
-                if isPrime(number: primeNumbers.last! + iterator)
+                if isPrime(number: iterator)
                 {
-                    primeNumbers.append(primeNumbers.last! + iterator)
-                    iterator = 1
+                    primeNumbers.append(iterator)
                 }
-                else
-                {
-                    iterator += 1
-                }
+                iterator += 2
             }
             print("All: \(primeNumbers)")
             print("last prime: \(primeNumbers.last ?? 0)")
@@ -111,19 +108,13 @@ class OrganizationInfoViewController: UIViewController
         
         func isPrime(number: Int) -> Bool
         {
-            if (number % 10) == 0 {return false} // 0: last digit 0
-            if (number % 10) % 2 == 0 {return false} // 2: last digit divided by 2
-            if (number % 10) == 5 {return false} // 5: last digit 5
-            
-            for i in 2..<number-1
+            for i in 3..<number-1
             {
                 if number % i == 0
                 {
-                    print("false: \(number)")
                     return false
                 }
             }
-            print("\t is true: \(number)")
             return true
         }
         
